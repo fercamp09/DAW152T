@@ -1,0 +1,54 @@
+<head>
+  <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
+  <%= stylesheet_link_tag "estilo-principal", media: "all" %>
+  <%= stylesheet_link_tag "menu-principal", media: "all" %>
+  <%= stylesheet_link_tag "login", media: "all" %>
+</head>
+	<%= render 'menu_principal' %>
+	<section>
+		<div class="row div-background flex-center">
+			<div class="flex-container whiteDiv col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+				<div class="slicedDiv flex-item">
+					<h1>Registrarse</h1>
+
+					<form class="navbar-form " role="search">
+						<div class="form-group">
+							<label for="txtNombre">Nombre:</label><br />
+							<input type="text" id="txtNombre" class="form-control" placeholder=" "><br />
+
+							<label for="email">Correo Electr&oacute;nico:</label><br />
+							<input type="text" id="email" class="form-control" placeholder="Ex: foo@gmail.com"><br />
+
+							<label for="password">Contrase&nacute;a:</label><br />
+							<input type="text" id="password" class="form-control" placeholder=""><br />
+
+							<label for="aceptoTerminos">
+								<input type="checkbox" id="aceptoTerminos">
+								<a href="" target="">Acepto los T&eacute;rminos de uso</a>
+							</label><br />
+						</div>
+						<a href="window.html.erb">
+							<button type="submit" class="btn btn-primary center-block" >Registrarse</button>
+						</a>
+					</form>
+				</div>
+				<div class="flex-item">
+					<h1>Iniciar sesi&oacute;n</h1>
+					<a href="window.html.erb" class="btn btn-block btn-social btn-facebook">
+		    			<span class="fa fa-facebook"></span> Iniciar sesi&oacute;n con Facebook
+		  			</a>
+					<a href="window.html.erb" class="btn btn-block btn-social btn-twitter">
+		    			<span class="fa fa-twitter"></span> Iniciar sesi&oacute;n con Twitter
+		  			</a>
+		  			<a href="window.html.erb" class="btn btn-block btn-social btn-google">
+		    			<span class="fa fa-google"></span> Iniciar sesi&oacute;n con Google
+		  			</a>
+		  			<a href="signin" class="btn btn-block btn-social btn-espol">
+					 	 <%= image_tag('ESPOL.png', alt: 'logo de espol', width:'32', height:'32') %>
+		    			<span class="fa fa-espol"></span> Iniciar sesi&oacute;n con su cuenta Espol
+		  			</a>
+		  		</div>
+			</div>
+		</div>
+	</section>
+	<%= render 'footer' %>

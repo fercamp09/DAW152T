@@ -1,0 +1,18 @@
+<head>
+  <%= stylesheet_link_tag "estilo-principal", media: "all" %>
+  <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
+  <%= stylesheet_link_tag "estilo-window", media: "all" %>
+  <%= stylesheet_link_tag "menu-principal", media: "all" %>
+  <%= javascript_include_tag "window" %>
+  <%= javascript_include_tag "FileSaver"%>
+</head>
+<%= render 'menu_application' %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Edit:</strong>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

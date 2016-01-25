@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <%= render 'menu_header' %>
+    <% if true %>
+      <%= render 'menu_options' %>
+    <% else %>
+        <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
+          <%= render 'menu_title' %>
+          <%= button_to 'Crear nuevo modelo', workstation ,class: 'btn btn-default navbar-btn' %>
+        </div>
+  <% end %>
+  </div>
+</nav>

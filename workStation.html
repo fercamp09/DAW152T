@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>uDraw.io</title>
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<!-- JQueryUI -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<!-- Snap.svg -->
+	<script src="js/snap.svg-min.js"></script>
+	<!-- Font-awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Social Buttons -->
+	<link rel="stylesheet" href="css/bootstrap-social.css"/>
+	<!--<link rel="stylesheet" href="/resources/demos/style.css">-->
+	<!--Share buttons-->
+	<!--
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+
+	-->
+    <script src="js/FileSaver.js"></script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "4c53ea28-073c-4903-b3b0-36d138298f11", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+	<!-- Ours-->
+	<link rel="stylesheet" href="css/estilo-principal.css"/>
+	<script src="js/example.js" type="text/javascript"></script>
+	<script src="js/workstation.js"></script>
+	<link rel="stylesheet" href="css/workstation.css"/>
+	<link rel="stylesheet" href="css/menu-principal.css"/>
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="window.htmll">
+				<img class="page-logo" alt="uDraw.io" src="resources/hierarchy11.svg">
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#"  onclick="saveSVG();" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Archivo <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Nuevo</a></li>
+						<li><a href="#">Abrir</a></li>
+						<li><a href="guardar.html" target="_blank">Guardar</a></li>
+						<li><a href="#" onclick="encode_as_img_and_link();">Exportar a svg...</a></li>
+						<li><a href="window.html">Cerrar</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="collapse navbar-collapse navbar-right">
+				<ul class="nav navbar-nav">
+					<li >
+						<div class="user">
+							<p id="userName">&#60;Usuario&#62;</p>
+							<p id="email">&#60;Email&#62;</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<a id="userImg" class="navbar-brand navbar-right" href="#">
+				<img src="resources/img.jpg" class="img-responsive"/>
+			</a>
+		</div>
+	</div>
+</nav>
+<svg id="svg" class="work-area geBackgroundPage" >
+	<defs>
+		<filter id="shadowBlack" x="0" y="0" width="100%" height="100%">
+			<feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+			<feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+			<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+		</filter>
+		<marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="7" orient="auto">
+			<path d="M2,2 L2,13 L8,7 L2,2" style="fill: #000000;" />
+		</marker>
+		<marker id="markerCircle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+			<circle cx="5" cy="5" r="3" style="stroke: none; fill:#000000;" stroke-width="1px" />
+		</marker>
+		<marker id="uno" markerWidth="20" markerHeight="20" refX="10" refY="8"   orient="auto" markerUnits="userSpaceOnUse">
+			<line x1="15" y1="0" x2="15" y2="17" style="stroke: #000000; fill:#ffffff; stroke-width: 2px;" />
+		</marker>
+		<marker id="uno-reverse" markerWidth="20" markerHeight="20" refX="20" refY="8"   orient="auto" markerUnits="userSpaceOnUse">
+			<line x1="15" y1="0" x2="15" y2="17" style="stroke: #000000; fill:#ffffff; stroke-width: 2px;" />
+		</marker>
+		<marker id="cero-uno" markerWidth="20" markerHeight="20" refX="0" refY="8"   orient="auto" markerUnits="userSpaceOnUse">
+			<line x1="3" y1="0" x2="3" y2="18" style="stroke: #000000; fill:#ffffff; stroke-width: 2px;" />
+			<circle cx="12" cy="8" r="6" style="stroke: #000000; fill:#ffffff;"/>
+			</marker>
+		<marker id="cero-uno-reverse" markerWidth="20" markerHeight="20" refX="18" refY="8"   orient="auto" markerUnits="userSpaceOnUse">
+			<circle cx="6" cy="8" r="6" style="stroke: #000000; fill:#ffffff;"/>
+			<line x1="15" y1="0" x2="15" y2="18" style="stroke: #000000; fill:#ffffff; stroke-width: 2px;" />
+		</marker>
+		<marker id="uno-uno" markerWidth="30" markerHeight="30" refX="0" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<path d="M8,0 v17 M12,0 v17" fill="none" stroke="#000" stroke-width="2px" />
+		</marker>
+		<marker id="uno-uno-reverse" markerWidth="30" markerHeight="30" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<path d="M8,0 v17 M12,0 v17" fill="none" stroke="#000" stroke-width="2px" transform="rotate(-180) translate(-20, -16)"/>
+		</marker>
+		<marker id="cero-muchos" markerWidth="30" markerHeight="30" refX="0" refY="8"   orient="auto" markerUnits="userSpaceOnUse">
+			<circle cx="15" cy="8" r="6" style="stroke: #000000; fill:#ffffff;"/>
+			<path d="M8,8 L1,1 M8,8 h-17 M8,8 L1,15" fill="none" stroke="#000" stroke-width="2px" />
+		</marker>
+		<marker id="cero-muchos-reverse" markerWidth="30" markerHeight="30" refX="22" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<circle cx="6" cy="8" r="6" style="stroke: #000000; fill:#ffffff;" />
+			<path d="M8,8 L1,1 M8,8 h-17 M8,8 L1,15" fill="none" stroke="#000" stroke-width="2px" transform="rotate(-180) translate(-20, -16)"/>
+		</marker>
+		<marker id="muchos" markerWidth="20" markerHeight="20" refX="0" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<path d="M8,8 L1,1 M8,8 h-10 M8,8 L1,15" fill="none" stroke="#000" stroke-width="2px" />
+		</marker>
+		<marker id="muchos-reverse" markerWidth="20" markerHeight="20" refX="20" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<path d="M8,8 L1,1 M8,8 h-10 M8,8 L1,15" transform="rotate(-180) translate(-20, -16)"
+				  fill="none" stroke="#000" stroke-width="2px" />
+		</marker>
+		<marker id="uno-muchos" markerWidth="20" markerHeight="20" refX="0" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<path d="M8,8 L1,1 M8,8 h-10 M8,8 L1,15 M11,0 V17" fill="none" stroke="#000" stroke-width="2px"/>
+		</marker>
+		<marker id="uno-muchos-reverse" markerWidth="20" markerHeight="20" refX="12" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+			<path d="M8,8 L1,1 M8,8 h-10 M8,8 L1,15 M11,0 V17" transform="rotate(-180) translate(-12, -16)"
+				  fill="none" stroke="#000" stroke-width="2px" />
+		</marker>
+	</defs>
+	<!-- Drawing Area -->
+</svg>
+<div id="accordion-resizer" class="draggable asideMenu">
+	<div class="contenedor-paletas">
+		<h2>Entidad</h2>
+		<div id="paleta1" class="paleta container-fluid">
+
+		</div>
+		<h2>Relaci&oacute;n</h2>
+		<div id="paleta2" class="paleta container-fluid">
+			<fieldset>
+				<label for="desde">Desde:</label>
+				<select name="filesB" id="desde" class="filesB">
+					<option value="uno" data-class="uno">Uno</option>
+					<option value="muchos" data-class="muchos">Muchos</option>
+					<option value="uno-solo-uno" data-class="uno-solo-uno">Uno (y solo uno)</option>
+					<option value="cero-uno" data-class="cero-uno">Cero o uno</option>
+					<option value="uno-muchos" data-class="uno-muchos">Uno o muchos</option>
+					<option value="cero-muchos" data-class="cero-muchos">Cero o muchos</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<label for="hasta">Hasta:</label>
+				<select name="filesB" id="hasta" class="filesB">
+					<option value="uno" data-class="uno">Uno</option>
+					<option value="muchos" data-class="muchos">Muchos</option>
+					<option value="uno-solo-uno" data-class="uno-solo-uno">Uno (y solo uno)</option>
+					<option value="cero-uno" data-class="cero-uno">Cero o uno</option>
+					<option value="uno-muchos" data-class="uno-muchos">Uno o muchos</option>
+					<option value="cero-muchos" data-class="cero-muchos">Cero o muchos</option>
+				</select>
+			</fieldset>
+		</div>
+		<h2>Compartir:</h2>
+		<div class="container-fluid">
+			<span class='st_facebook' displayText='Facebook'></span>
+			<span class='st_twitter' displayText='Tweet'></span>
+			<span class='st_' displayText=''></span>
+			<span class='st_googleplus' displayText='Google +'></span>
+		</div>
+	</div>
+
+</div>
+</body>
+
+</html>

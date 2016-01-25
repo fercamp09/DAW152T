@@ -1,0 +1,25 @@
+<%= form_for(@diagram) do |f| %>
+    <% if @diagram.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@diagram.errors.count, "error") %> prohibited this diagram from being saved:</h2>
+
+          <ul>
+            <% @diagram.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.text_area :image, size: "60x12", id: 'imagen-svg'%><br>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      <%= f.submit "Guardar", class: "btn btn-primary"%>
+    </div>
+<% end %>

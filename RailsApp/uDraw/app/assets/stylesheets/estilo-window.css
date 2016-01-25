@@ -1,0 +1,129 @@
+
+.jumbotron {
+	background-image: url('72RTRWFO25.jpg');
+}
+
+.jumbotron .container h1{
+	color: white;
+}
+
+.btn {
+	background: rgb(220, 220, 220);
+	border-radius: 5px;
+	left: 63%;
+	top: 45%;
+}
+
+#btn-holder{
+	width: 62vw;
+	margin: 5vh;
+	background-color: #FFF;
+	margin-left: 38%;
+}
+
+.recent {
+	background-color: rgb(220, 220, 220);
+	color: black;
+	margin: 20px;
+}
+
+/*.recent p {
+	position: relative;
+	bottom: 65%;
+	left: 23%;
+	color: black;
+	line-height: 50%;
+	text-overflow: ellipsis;
+}
+
+.recent a {
+	display: inline-block;
+}
+*/
+.division {
+	position: relative;
+	width: 100%;
+	height: 2px;
+	background-color: black;
+}
+
+header h4 {
+	position: relative;
+	left: 5%;
+}
+
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	width: auto;
+	height: auto;
+	justify-content: center;
+	align-items: baseline;
+}
+.flex-item {
+	margin: 20px;
+	width: 300px;
+}
+
+.recent a {
+    display:inline-block;
+}
+
+.boxshadow {
+	-moz-box-shadow: 1px 10px 33px #71756d;
+	-webkit-box-shadow: 1px 10px 33px #71756d;
+	box-shadow: 1px 10px 33px #71756d;
+}
+
+.thumbnail-hover:hover {
+    position:relative;
+    top:-25px;
+    height:auto;
+    display:block;
+    z-index:999;
+    background-color: #daf497;
+}
+
+
+img {
+   height: 240px;
+   width: 240px;
+   border-radius: 5px;
+  
+}
+
+#archivos {
+    background-color: #f4eded;
+}
+
+header h4 {
+    background-color: #f4eded;
+    text-align: center;
+    margin: 0;
+    font-size: 48px;
+}
+
+body {
+    background-color: #f4eded;
+}
+
+button {
+   alignment-adjust: central;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    text-align:center;
+}
+
+.img-responsive1{
+
+	width: 100%;
+	height: 100%;
+	max-width: 200px;
+	max-height: 100px;
+
+}

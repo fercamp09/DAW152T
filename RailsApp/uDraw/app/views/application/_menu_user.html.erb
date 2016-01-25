@@ -1,0 +1,15 @@
+<div class="collapse navbar-collapse navbar-right">
+  <ul class="nav navbar-nav">
+    <li >
+      <div class="user">
+        <p id="userName"><%= current_user %></p>
+        <p id="email"><%= current_user %>@espol.edu.ec   <%= link_to 'Edit', edit_user_path(User.find_by espol:current_user) %></p>
+
+        <p><%= link_to "Log out", logout_path, :method => :delete %></p>
+      </div>
+    </li>
+  </ul>
+</div>
+<a id="userImg" class="navbar-brand navbar-right" href="#">
+  <%= image_tag('img.jpg', class: 'img-responsive') %>
+</a>

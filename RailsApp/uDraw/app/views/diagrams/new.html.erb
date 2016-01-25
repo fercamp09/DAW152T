@@ -1,0 +1,66 @@
+<head>
+  <%= Gon::Base.render_data %>
+  <!-- JQueryUI -->
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "4c53ea28-073c-4903-b3b0-36d138298f11", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+  <!-- Ours-->
+  <%= stylesheet_link_tag "estilo-principal", media: "all" %>
+  <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
+  <%= stylesheet_link_tag "workstation", media: "all" %>
+  <%= stylesheet_link_tag "menu-principal", media: "all" %>
+  <%= javascript_include_tag "snap.svg-min"%>
+  <%= javascript_include_tag "workstation"%>
+  <%= javascript_include_tag "example"%>
+  <%= javascript_include_tag "FileSaver"%>
+</head>
+<%= render 'menu_application' %>
+<%= render 'drawing_area' %>
+<div id="accordion-resizer" class="draggable asideMenu">
+  <div class="contenedor-paletas">
+    <h2>Entidad</h2>
+    <div id="paleta1" class="paleta container-fluid">
+
+    </div>
+    <h2>Relaci&oacute;n</h2>
+    <div id="paleta2" class="paleta container-fluid">
+      <fieldset>
+        <label for="desde">Desde:</label>
+        <select name="filesB" id="desde" class="filesB">
+          <option value="uno" data-class="uno">Uno</option>
+          <option value="muchos" data-class="muchos">Muchos</option>
+          <option value="uno-solo-uno" data-class="uno-solo-uno">Uno (y solo uno)</option>
+          <option value="cero-uno" data-class="cero-uno">Cero o uno</option>
+          <option value="uno-muchos" data-class="uno-muchos">Uno o muchos</option>
+          <option value="cero-muchos" data-class="cero-muchos">Cero o muchos</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="hasta">Hasta:</label>
+        <select name="filesB" id="hasta" class="filesB">
+          <option value="uno" data-class="uno">Uno</option>
+          <option value="muchos" data-class="muchos">Muchos</option>
+          <option value="uno-solo-uno" data-class="uno-solo-uno">Uno (y solo uno)</option>
+          <option value="cero-uno" data-class="cero-uno">Cero o uno</option>
+          <option value="uno-muchos" data-class="uno-muchos">Uno o muchos</option>
+          <option value="cero-muchos" data-class="cero-muchos">Cero o muchos</option>
+        </select>
+      </fieldset>
+    </div>
+    <h2>Compartir:</h2>
+    <div class="container-fluid">
+      <span class='st_facebook' displayText='Facebook'></span>
+      <span class='st_twitter' displayText='Tweet'></span>
+      <span class='st_' displayText=''></span>
+      <span class='st_googleplus' displayText='Google +'></span>
+      <%= form_tag("/share/"+@diagrams_id.to_s,remote:true, method: "post") do %>
+          <%= label_tag(:q, "Compartir con:") %>
+          <%= text_field_tag(:share_user) %>
+          <%= submit_tag("Compartir") %>
+      <% end %>
+    </div>
+  </div>
+  <%= render "modal"%>
+</div>

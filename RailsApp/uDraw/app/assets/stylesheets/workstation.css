@@ -1,0 +1,117 @@
+.paleta {
+    border: solid #a7e84a thin;
+    background: #a7e84a;
+}
+.paleta-icon {
+    width: 90%;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+}
+
+.paleta-icon p{
+    height: 0;
+    width: 0;
+}
+
+.tamanio-grande {
+    width: 100%;
+    height: auto;
+}
+
+.tamanio-pequeno {
+    width: 60%;
+    height: auto;
+}
+.geBackgroundPage{
+    width: 1000px;
+    height: 700px;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    border: 10px solid rgb(202, 202, 202);
+    overflow: hidden;
+    background-image: url(data:image/gif;base64,R0lGODlhCgAKAJEAAAAAAP///8zMzP///yH5BAEAAAMALAAAAAAKAAoAAAIJ1I6py+0Po2wFADs=);
+    background-color: rgb(255, 255, 255);
+    background-position: 9px 9px;
+
+}
+
+.droppable {
+    padding: 0.5em;
+    margin: 10px;
+}
+
+.asideMenu {
+    position: relative;
+    top: -20px;
+    left: 0;
+    background-color: #78bf24;
+    padding: 10px;
+    width: 140px;
+    height: auto;
+}
+
+.asideMenu h2 {
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    font-size: 1.7em;
+    font-weight: bold;
+    font-family: "Arial", serif;
+}
+
+/*.thumbnail:hover {
+    position:relative;
+    left: -2px;
+    width:50px;
+    height:50px;
+    display:block;
+    z-index:999;
+}*/
+fieldset {
+    border: 0;
+}
+label {
+    display: block;
+}
+select {
+    width: 100%;
+}
+
+/* select with custom icons */
+.ui-selectmenu-menu .ui-menu.customicons .ui-menu-item {
+    padding: 0.5em 0 0.5em 3em;
+}
+.ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
+    height: 30px;
+    width: 30px;
+    top: 0.1em;
+}
+.ui-icon.uno {
+    background: url("../resources/paleta/uno.svg") 0 0 no-repeat;
+}
+.ui-icon.cero-uno {
+    background: url("../resources/paleta/cero-uno.svg") 0 0 no-repeat;
+}
+.ui-icon.uno-solo-uno {
+    background: url("../resources/paleta/uno-uno.svg") 0 0 no-repeat;
+}
+
+.ui-icon.cero-muchos {
+    background: url("../resources/paleta/cero-muchos.svg") 0 0 no-repeat;
+}
+.ui-icon.muchos {
+    background: url("../resources/paleta/muchos.svg") 0 0 no-repeat;
+}
+.ui-icon.uno-muchos {
+    background: url("../resources/paleta/uno-muchos.svg") 0 0 no-repeat;
+}
+
+.stButton .stLarge {
+    height: 20px;
+    width: auto;
+}
+
+body {
+    background-color: #f4eded;
+}

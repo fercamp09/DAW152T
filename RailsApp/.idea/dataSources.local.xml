@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - uDraw_development@localhost" uuid="c01723a6-e4c2-45b0-8563-21db2f37c8ac">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>udraw_development.*</schema-pattern>
+      <default-schemas>udraw_development.*</default-schemas>
+    </data-source>
+  </component>
+</project>

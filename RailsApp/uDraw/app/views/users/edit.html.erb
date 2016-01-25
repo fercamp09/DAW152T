@@ -1,0 +1,14 @@
+<head>
+  <%= stylesheet_link_tag "estilo-principal", media: "all" %>
+  <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
+  <%= stylesheet_link_tag "estilo-window", media: "all" %>
+  <%= stylesheet_link_tag "menu-principal", media: "all" %>
+  <%= javascript_include_tag "window" %>
+  <%= javascript_include_tag "FileSaver"%>
+</head>
+<%= render 'menu_application' %>
+<h1>Administrar Cuenta</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', window_path%>

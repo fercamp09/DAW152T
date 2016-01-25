@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ERModel>
+    <entities>
+        <entity>
+            <id>1</id>
+            <text>Figura1</text>
+            <form>rect</form>
+            <width>100</width>
+            <height>50</height>
+            <x>100</x>
+            <y>50</y>
+            <style>
+                <fill>#ffffff</fill>
+                <stroke>#000</stroke>
+                <strokeWidth>3</strokeWidth>
+            </style>
+            <owner></owner>
+        </entity>
+        <entity>
+            <id>2</id>
+            <text>Figura2</text>
+            <form>rect</form>
+            <width>100</width>
+            <height>50</height>
+            <x>250</x>
+            <y>100</y>
+            <style>
+                <fill>#ffffff</fill>
+                <stroke>#000</stroke>
+                <strokeWidth>3</strokeWidth>
+            </style>
+            <owner></owner>
+        </entity>
+    </entities>
+    <relationships>
+        <relation>
+            <origin>2</origin>
+            <destiny>1</destiny>
+            <style>
+                <stroke>#000</stroke>
+                <strokeWidth>2</strokeWidth>
+            </style>
+        </relation>
+    </relationships>
+</ERModel>
