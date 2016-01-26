@@ -56,3 +56,9 @@ gem 'savon', '~> 2.0'
 
 # Use gon for passing variables from controllers to js
 gem 'gon'
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"

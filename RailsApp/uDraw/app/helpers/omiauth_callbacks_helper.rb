@@ -1,0 +1,2 @@
+module OmiauthCallbacksHelper
+end

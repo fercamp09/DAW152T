@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   post 'signin' => 'session#create'
   delete 'logout' => 'session#destroy'
 
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

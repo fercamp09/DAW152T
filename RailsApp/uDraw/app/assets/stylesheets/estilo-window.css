@@ -1,6 +1,7 @@
 
 .jumbotron {
 	background-image: url('72RTRWFO25.jpg');
+	background-size: 100% auto;
 }
 
 .jumbotron .container h1{

@@ -102,7 +102,8 @@
 }
 
 .jumbotron {
-	background-image: url('../resources/72RTRWFO25.jpg');
+	background-image: url('72RTRWFO25.jpg');
+    background-size: 100% auto;
 }
 
 .jumbotron .container h1{
@@ -128,6 +129,6 @@
     font-size: 0.7em;
     margin-bottom: 0;
     margin-top: 3px;
-    font-weight: normal
+    font-weight: normal;
     font-style: oblique;
 }
