@@ -39,15 +39,15 @@ class ApplicationController < ActionController::Base
 
   def set_my_documents
      #@my_documents = (User.find_by espol: current_user).own_diagrams
-     #@my_documents =  (User.find_by espol: current_user).own_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
-    @my_documents = Diagram.all
+     @my_documents =  (User.find_by espol: current_user).own_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
+    #@my_documents = Diagram.all
   end
 
   def set_shared_documents
     #@shared_documents = (User.find_by espol: 'ferecamp').diagrams_users.where(shared: true)
     #@shared_documents = User.first.shared_diagrams
     #@shared_documents = Diagram.joins(:users).where(: 'ferecamp')
-    #@shared_documents =  (User.find_by espol: current_user).shared_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
-    @shared_documents = Diagram.all
+    @shared_documents =  (User.find_by espol: current_user).shared_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
+    #@shared_documents = Diagram.all
   end
 end

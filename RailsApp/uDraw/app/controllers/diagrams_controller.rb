@@ -59,7 +59,7 @@ class DiagramsController < ApplicationController
   def destroy
     @diagram.destroy
     respond_to do |format|
-      format.html { redirect_to diagrams_url, notice: 'Diagram was successfully destroyed.' }
+      format.html { redirect_to window_path, notice: 'Diagram was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
