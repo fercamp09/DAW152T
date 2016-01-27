@@ -2,7 +2,8 @@ var lineVariables = [0, 0];
 var selected;
 var selectedHandler;
 var globalID = 0;
-var entidades = [];
+//var entidades = [];
+var entidades = Object.create(null);
 var selectedTitle;
 
 function incrementID(){
@@ -18,14 +19,16 @@ function addToEntidadesArray(entity){
         toPos: [],
         to: []
     };
-
+    var id = entidad.id.split("-");
     // Agregar la entidad a la lista de entidades
-    entidades.push(entidad);
+    //entidades.push(entidad);
+    entidades[id[1]] = entidad;
+    //entidades[parseInt(entidad.id)] = entidad;
+    console.log(entidades);
 }
 
 function addEntityListener(entity){
     // Para definir el evento de arrastar
-    console.log(entity);
     entity.drag(updateLines, start);
     // Obtener una referencia al circulo para eliminar la entidad y agregar un eventhandler para hover y click
     entity.hover(function showDeleteButton (event){
@@ -56,9 +59,11 @@ function addCloseButtonListener(closeButton){
 
 function addLineListeners (relation){
     relation.click(function () {
-        selectedLine.attr({
-            stroke: "#000000"
-        });
+        if (selectedLine){
+            selectedLine.attr({
+                stroke: "#000000"
+            });
+        }
         selectedLine = this.select("line");
         $(selectedLine.node).css({
             //markerMid: "url(#markerArrow)"
@@ -88,7 +93,7 @@ function addLineListeners (relation){
 
 function addTextListeners (text){
     text.dblclick(function (event) {
-        var input = $("input");
+        var input = $("#modificadorTexto");
         input.val("");
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
@@ -106,10 +111,17 @@ function joinRelations(relations) {
         classes = relations[i].select("line").attr("class").split(" ");
         for (j = 0; j < classes.length; j++) {
             ids = classes[j].split("-");
-            entidades[parseInt(ids[0])].from.push(Snap(relations[i]));
+            //console.
+            /*entidades[parseInt(ids[0])].from.push(Snap(relations[i]));
             entidades[parseInt(ids[0])].fromPos.push(ids[1]);
             entidades[parseInt(ids[2])].to.push(Snap(relations[i]));
             entidades[parseInt(ids[2])].toPos.push(ids[3]);
+            */
+             entidades[ids[0]].from.push(Snap(relations[i]));
+             entidades[ids[0]].fromPos.push(ids[1]);
+             entidades[ids[2]].to.push(Snap(relations[i]));
+             entidades[ids[2]].toPos.push(ids[3]);
+
         }
         addTextListeners(relations[i].select("text"));
         addLineListeners(relations[i]);
@@ -154,7 +166,8 @@ function chooseSide(id, entity) {
 function updateLines(dx, dy){
     var position;
     var id = this.attr("id").split("-");
-    var entidadActual = entidades[parseInt(id[1])];
+    //var entidadActual = entidades[parseInt(id[1])];
+    var entidadActual = entidades[id[1]];
     var lineBBox, textBBox;
     this.attr({
         transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
@@ -259,6 +272,9 @@ function drawRelations(lineHandlers, start){
                 var relationName = s.text(lineBBox.cx,lineBBox.cy - 3, "Relacion");
                 var relationCloseButton = s.circle(x_in_canvas, y_in_canvas, 0);
                 var relationGroup = s.g(relationName, line, relationCloseButton);
+                relationGroup.attr({
+                    class: "relation"
+                });
                 line.attr({
                     fill: "#000000",
                     stroke: "#000000",
@@ -274,7 +290,7 @@ function drawRelations(lineHandlers, start){
                 addLineListeners(relationGroup);
                 // Añade la linea a la entidad y la entidad a las entidades
                 // Añade la posicion desde donde se creo y termino la linea
-                var idFrom = selected.attr("id").split("-");
+                /*var idFrom = selected.attr("id").split("-");
                 entidades[parseInt(idFrom[1])].from.push(relationGroup);
                 var id1Pos = selectedHandler.attr("class").split("-");
                 entidades[parseInt(idFrom[1])].fromPos.push(id1Pos[1]);
@@ -283,7 +299,16 @@ function drawRelations(lineHandlers, start){
                 entidades[parseInt(idTo[1])].to.push(relationGroup);
                 var id2Pos = this.attr("class").split("-");
                 entidades[parseInt(idTo[1])].toPos.push(id2Pos[1]);
+*/
+                var idFrom = selected.attr("id").split("-");
+                entidades[idFrom[1]].from.push(relationGroup);
+                var id1Pos = selectedHandler.attr("class").split("-");
+                entidades[idFrom[1]].fromPos.push(id1Pos[1]);
 
+                var idTo = entity.attr("id").split("-");
+                entidades[idTo[1]].to.push(relationGroup);
+                var id2Pos = this.attr("class").split("-");
+                entidades[idTo[1]].toPos.push(id2Pos[1]);
                 // Agregar los ids de las entidades como clases de la linea
                 line.attr({class: "" + idFrom[1] + "-" + id1Pos[1] + "-" + idTo[1] + "-" + id2Pos[1]});
 
@@ -358,20 +383,20 @@ function loadSVG(){
     var imagen = Snap.parse(myFrag);
     //s.append(imagen);
     //imagen = svg;
-    s.append(imagen);
+    //s.append(imagen);
+    // Seleccionar los handlers para conectar lineas
+
     var g = imagen.selectAll(".entidad");
-    console.log(g);
     for (i = 0; i < g.length; i++) {
         // s es el area de dibujo, agregar la imagen cargada al area de dibujo
         s.append(g[i]);
-        console.log(g[i]);
         // Obtener una referencia al titulo de la entidad y agregar un eventhandler de dblclick
         var title = g[i].select(".titulo");
         var att = g[i].select(".atributo");
         var sqr = g[i].select(".cuadrado");
         var closeButton = g[i].select(".closeButton");
         var lineHandlers = g[i].selectAll(".line-handlers circle");
-        att.attr("class", "atributo-" + globalID);
+        att.attr("class", "atributo atributo-" + globalID);
         sqr.attr("id", "cuadrado-" + globalID);
 
         addToEntidadesArray(g[i]);
@@ -386,12 +411,12 @@ function loadSVG(){
         incrementID();
 
     }
-
-    // Seleccionar los handlers para conectar lineas
+    var imagen = Snap.parse(myFrag);
     var relations = imagen.selectAll(".relation");
-    if(relations.length > 0){
+    if (relations.length > 0){
         selectedLine = relations[0].select("line");
         joinRelations(relations);
+        s.append(relations);
     }
     //});
 }

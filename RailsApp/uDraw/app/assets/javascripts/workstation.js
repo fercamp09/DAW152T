@@ -43,7 +43,7 @@ $(function() {
 });
 
 function changeTitle (event){
-    var input = $("input");
+    var input = $("#modificadorTexto");
     input.attr("value","px");
     input.attr("type","text");
     input.css("top","" +  event.target.getBoundingClientRect().top  + "px");
@@ -55,6 +55,7 @@ function changeTitle (event){
     });
 }
 
+// Para crear la entidad en el area de dibujo
 function cloneMouseup(event) {
     var svg = $("#svg");
     var x0 = svg.position().left;
@@ -64,7 +65,7 @@ function cloneMouseup(event) {
     //var x_in_canvas = 0;
     //var y_in_canvas = 0;
 
-    // Create eleements
+    // Create elements
     var rectEntity = s.rect(x_in_canvas, y_in_canvas, 100, 100, 0.5, 0.5);
     var rectTitle = s.rect(x_in_canvas, y_in_canvas, 100, 30, 0.5, 0.5);
     var closeButton = s.circle(x_in_canvas + 100, y_in_canvas, 0);
@@ -93,6 +94,9 @@ function cloneMouseup(event) {
         stroke: "#ff0000",
         strokeWidth: 0
     });
+    title.attr({
+        class: "titulo"
+    });
     rectTitle.attr({
         fill: "#ffffff",
         stroke: "#000",
@@ -106,7 +110,8 @@ function cloneMouseup(event) {
         strokeWidth: 2
     });
     attribute.attr({
-        class: "atributo-" + globalID
+        //class: "atributo atributo-" + globalID
+        class: "atributo"
     });
     line_handlers.attr({
         class: "line-handlers"
@@ -144,6 +149,7 @@ function cloneMouseup(event) {
     //processImage(loadedImage);
 }
 
+// Para cargar las imagenes de la paleta mediante ajax, en realidad solo hay una entidad
 function loadThumbnails(e) {
     var name, image, recent, bigDiv;
     xmlFile = e.target.responseXML;
@@ -190,7 +196,7 @@ function loadThumbnails(e) {
 
 function addTextListener (text){
     text.ondblclick = (function (event) {
-        var input = $("input");
+        var input = $("#modificadorTexto");
         input.val("");
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
@@ -229,19 +235,19 @@ function initializePage() {
     var textbox = document.createElement("input");
     $( "body" ).append(textbox);
     var input = $(textbox);
-    input.attr("id","text");
+    input.attr("id","modificadorTexto");
     input.css("position","absolute");
     input.css("top","-100px");
     input.css("left","-100px");
     input.attr("value","px");
     input.attr("type","text");
     // Registrar el event handler para el enter en el input
-    input = $("input");
+    input = $("#modificadorTexto");
     var i, nodoActual, rectangulo, position;
     input.keypress(function (e) {
         nodoActual = selectedTitle.node || selectedTitle;
         rectangulo = nodoActual.parentNode.parentNode.children[0].children[0];
-        var input = $("input");
+        var input = $("#modificadorTexto");
         if (e.keyCode == 13) {
             count = 0;
             if(nodoActual == nodoActual.parentNode.lastElementChild){
@@ -398,12 +404,12 @@ function initializePage() {
     });
 }
 
+// Para descargar archivos
 function encode_as_img_and_link() {
     var svg = '<?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 500" style="enable-background:new 0 0 1000 500;" xml:space="preserve">' + document.getElementById("svg").innerHTML + '</svg>';
     saveAs(new Blob([svg], { type: "application/svg+xml" }), "descarga.svg");
     //saveAs(new Blob([svg], { type: "application/svg+xml" }), gon.push({ :diagram_name => @diagram.name }));
 }
-
 
 function saveSVG() {
     var svg = document.getElementById("svg").innerHTML;
