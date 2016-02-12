@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :registerable, :rememberable, :omniauthable
-  has_many :diagrams_users
-  has_many :diagrams, through: :diagrams_users
+  has_many :diagrams_users, dependent: :destroy
+  has_many :diagrams, through: :diagrams_users, dependent: :destroy
   has_many :shared_diagrams , -> { where shared: true }, class_name: "DiagramsUser"
   has_many :own_diagrams , -> { where shared: nil}, class_name: "DiagramsUser"
 

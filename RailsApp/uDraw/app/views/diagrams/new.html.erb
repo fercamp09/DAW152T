@@ -55,10 +55,10 @@
       <span class='st_twitter' displayText='Tweet'></span>
       <span class='st_' displayText=''></span>
       <span class='st_googleplus' displayText='Google +'></span>
-      <%= form_tag("/share/"+@diagrams_id.to_s,remote:true, method: "post") do %>
-          <%= label_tag(:q, "Compartir con:") %>
-          <%= text_field_tag(:share_user) %>
-          <%= submit_tag("Compartir") %>
+      <%= form_tag("/share/"+params[:id],remote:true, method: "post") do %>
+          <%= label_tag(:q, "Compartir con:",class:'highlight') %>
+          <%= text_field_tag(:share_user,nil, :size=> 10) %>
+          <%= submit_tag("Compartir", class:'btn-share')%>
       <% end %>
     </div>
   </div>

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :require_user, only: [:window]
+  before_action :require_user, only: [:window, :workstation, :index]
   before_action :set_document, only: [:workstation]
   before_action :set_my_documents, only: [:window]
   before_action :set_shared_documents, only: [:window]

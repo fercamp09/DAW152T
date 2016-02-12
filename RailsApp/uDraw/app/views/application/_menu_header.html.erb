@@ -6,7 +6,7 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand" href="/">
+  <a class="navbar-brand" href="<%= if current_user then window_url else root_url end%>">
     <%= image_tag('hierarchy11.svg', class: 'page-logo', alt: 'uDraw.io') %>
   </a>
 </div>

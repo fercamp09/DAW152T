@@ -1,6 +1,7 @@
 class DiagramsController < ApplicationController
   before_action :set_diagram, only: [:show, :edit, :update, :destroy, :share]
   before_action :set_diagrams_id, only: [:new]
+  before_action :require_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   # GET /diagrams
   # GET /diagrams.json

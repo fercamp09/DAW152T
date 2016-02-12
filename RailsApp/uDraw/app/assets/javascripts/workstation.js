@@ -16,7 +16,11 @@ $(document).ready(
             out: function( event, ui ) {
             }
         });
+        $(".btn-share").click(function() {
+            $( ".highlight" ).effect( "highlight" );
+        });
     });
+
 
 /*$(function() {
  $( "#accordion" ).accordion({
