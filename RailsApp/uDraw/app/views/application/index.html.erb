@@ -18,7 +18,7 @@
 		<div class="container">
 			<h2 class="text-center">Todo lo necesario en una aplicaci&oacute;n</h2>
 			<div class="row center-block">
-			  <div class="little-subdivision col-sm-12 col-lg-3 feature-thumbnail">
+			  <div class="col-sm-12 col-lg-3 col-lg-offset-1 feature-thumbnail">
 				<div class="thumbnail">
 				  <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
 				  <div class="caption">
@@ -27,7 +27,7 @@
 				  </div>
 				</div>
 			  </div>
-			  <div class="little-subdivision col-sm-12 col-lg-3 col-lg-offset-1 feature-thumbnail">
+			  <div class="col-sm-12 col-lg-3 col-lg-offset-1 feature-thumbnail">
 				<div class="thumbnail">
 				  <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
 				  <div class="caption">
@@ -36,7 +36,7 @@
 				  </div>
 				</div>
 			  </div>
-			  <div class="little-subdivision col-sm-12 col-lg-3 col-lg-offset-1 feature-thumbnail">
+			  <div class="col-sm-12 col-lg-3 col-lg-offset-1 feature-thumbnail">
 				<div class="thumbnail">
 				  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 				  <div class="caption">
@@ -54,8 +54,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<h2 class="text-center">Como lo vio en:</h2>
-							  	<%= image_tag("ESPOL.png", class: 'img-responsive col-sm-12 col-md-6 testimonios') %>
-							  	<%= image_tag("focus.png", class: 'img-responsive col-sm-12 col-md-6 col-md-offset-6 testimonios') %>
+							  	<%= link_to 'http://www.espol.edu.ec' do %>
+							  		<%= image_tag("ESPOL.png", class: 'img-responsive col-sm-12 col-md-6 testimonios') %>
+							  	<% end %>
+							  	<%= link_to 'http://blog.espol.edu.ec/focus/category/revista/' do %>
+									<%= image_tag("focus.png", class: 'img-responsive col-sm-12 col-md-6 col-md-offset-6 testimonios') %>
+								<% end %>
 							</div>
 						</div>
 					</div>
@@ -67,7 +71,7 @@
 							<div class="row">
 								<div class="padding-examples col-xs-6 col-md-6">
 									<div class="thumbnail examples-thumbnail">
-									  <%= image_tag("connection41.svg", class: 'page-logo', alt: 'uDraw.io') %>
+									  <svg class=""><%= Diagram.first.image.html_safe %></svg>
 									  <div class="caption">
 											<h3>Ejemplo 1</h3>
 											<p></p>
@@ -76,7 +80,7 @@
 								</div>
 								<div class="padding-examples col-xs-6 col-md-6">
 									<div class="thumbnail examples-thumbnail">
-									  	<%= image_tag("connection87.svg", class: 'page-logo', alt: 'uDraw.io') %>
+									  <svg class=""><%= Diagram.find(2).image.html_safe %></svg>
 									  	<div class="caption">
 											<h3>Ejemplo 2</h3>
 											<p></p>

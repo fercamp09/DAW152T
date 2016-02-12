@@ -107,7 +107,6 @@
 }
 
 .examples-thumbnail img{
-  margin: 0;
   height: 75%;
   width: 50%;
 }
@@ -164,4 +163,13 @@ footer h3{
 
 #atribuciones li {
   padding: 1em 0 1em 0;
+}
+
+.img-responsive1{
+
+  width: 100%;
+  height: 100%;
+  max-width: 260px;
+  max-height: 100px;
+
 }
