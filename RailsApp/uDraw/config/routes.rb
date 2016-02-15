@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'application#login'
   get 'index' => 'application#index'
+  get 'register' => 'users#new'
   get 'window' => 'application#window'
   get 'workstation' => 'application#workstation'
   post 'share/:id' => 'diagrams#share'

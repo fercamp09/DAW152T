@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160126182618) do
     t.string   "twitter",             limit: 255
     t.string   "google",              limit: 255
     t.string   "espol",               limit: 255
+    t.string   "email",               limit: 255
+    t.string   "password_digest",     limit: 255
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.datetime "remember_created_at"

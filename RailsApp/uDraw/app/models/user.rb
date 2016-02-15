@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_secure_password
   devise :registerable, :rememberable, :omniauthable
   has_many :diagrams_users, dependent: :destroy
   has_many :diagrams, through: :diagrams_users, dependent: :destroy

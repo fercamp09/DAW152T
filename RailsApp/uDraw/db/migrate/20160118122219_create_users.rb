@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter
       t.string :google
       t.string :espol
+      t.string :email
+      t.string :password_digest
 
       t.timestamps null: false
     end

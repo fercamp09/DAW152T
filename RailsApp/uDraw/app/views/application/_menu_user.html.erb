@@ -5,7 +5,7 @@
       <ul class="dropdown-menu">
         <% if current_user %>
             <li><%= link_to 'Log Out', logout_url , method: :delete %> </li>
-            <li><%= link_to 'Edit User', edit_user_url(User.find_by espol: current_user) %> </li>
+
         <% else %>
             <li><%= link_to 'Log In', login_url%> </li>
         <% end %>

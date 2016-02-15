@@ -1,5 +1,28 @@
-<h1>New User</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', users_path %>
+<head>
+  <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
+  <%= stylesheet_link_tag "estilo-principal", media: "all" %>
+  <%= stylesheet_link_tag "menu-principal", media: "all" %>
+  <%= stylesheet_link_tag "login", media: "all" %>
+</head>
+<%= render 'menu_principal' %>
+<section>
+  <div class="row div-background flex-center">
+    <div class="flex-container whiteDiv col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-2">
+      <div class="slicedDiv flex-item">
+        <h1>Registrarse</h1>
+      </div>
+      <div class="flex-item">
+        <%= form_for(@user) do |f| %>
+            <label for="name">Nombre:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= f.text_field :name, :placeholder => "Nombre" %><br/>
+            <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= f.email_field :email, :placeholder => "Email" %><br/>
+            <label for="password">Contrase&ntilde;a:</label>
+            <%= f.password_field :password_digest, :placeholder => "Password" %><br />
+            <%= f.submit "Registrarse", class: "btn btn-primary center-block" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'footer' %>
