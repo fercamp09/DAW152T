@@ -279,9 +279,9 @@ function initializePage() {
                     }
                     rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height")) + parseInt(20*(count-1)));
                     position = parseInt(rectangulo.getAttribute("height"));
-                    nodoActual.parentNode.parentNode.children[2].children[1].setAttribute("cy", position/2);
-                    nodoActual.parentNode.parentNode.children[2].children[2].setAttribute("cy", position);
-                    nodoActual.parentNode.parentNode.children[2].children[3].setAttribute("cy", position/2);
+                    //nodoActual.parentNode.parentNode.children[2].children[1].setAttribute("cy", position/2);
+                    //nodoActual.parentNode.parentNode.children[2].children[2].setAttribute("cy", position);
+                    //nodoActual.parentNode.parentNode.children[2].children[3].setAttribute("cy", position/2);
                     nodoActual.parentNode.removeChild(nodoActual);
                 }
             } else if(nodoActual == nodoActual.parentNode.children[1] || nodoActual == nodoActual.parentNode.children[0]){
@@ -293,9 +293,9 @@ function initializePage() {
                 if(input.val() == ""){
                     rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height") - parseInt(20)));
                     position = parseInt(rectangulo.getAttribute("height"));
-                    nodoActual.parentNode.parentNode.children[2].children[1].setAttribute("cy", position/2);
-                    nodoActual.parentNode.parentNode.children[2].children[2].setAttribute("cy", position);
-                    nodoActual.parentNode.parentNode.children[2].children[3].setAttribute("cy", position/2);
+                    //nodoActual.parentNode.parentNode.children[2].children[1].setAttribute("cy", position/2);
+                    //nodoActual.parentNode.parentNode.children[2].children[2].setAttribute("cy", position);
+                    //nodoActual.parentNode.parentNode.children[2].children[3].setAttribute("cy", position/2);
                     for(w = 0; w < nodoActual.parentNode.children.length; w++){
                         if(nodoActual == nodoActual.parentNode.children[w]){
                             whois = w;
