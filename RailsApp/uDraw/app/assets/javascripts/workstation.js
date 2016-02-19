@@ -1,7 +1,7 @@
 var texts = [];
 var offset, size, count = 0;
 var selectedLine;
-
+var client;
 $(document).ready(
     function(){
         $( ".draggable" ).draggable({
@@ -19,6 +19,11 @@ $(document).ready(
         $(".btn-share").click(function() {
             $( ".highlight" ).effect( "highlight" );
         });
+
+        //client = new Faye.Client('/faye');
+        //client.subscribe('/diagrams', function(message){
+        //    console.log('Got a message' + message.text);
+        //});
     });
 
 
@@ -29,10 +34,61 @@ $(document).ready(
  });
  });*/
 //<script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+//$('#imagen-svg').val('<?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 500" style="enable-background:new 0 0 1000 500;" xml:space="preserve">' + s.toString() + '</svg>');
+
+// Funcion para guardar al dar click en guardar
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
     $('#guardar').click(function(){
-        $('#imagen-svg').val('<?xml version="1.0" encoding="iso-8859-1"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 500" style="enable-background:new 0 0 1000 500;" xml:space="preserve">' + s.toString() + '</svg>');
+        var diagram_entities = Object.create(null);
+        //var diagram_entities = [];
+        var diagram_relations = [];
+
+        var entities = s.selectAll('.entidad');
+        for (var i = 0; i < entities.length; i++) {
+            var borde = entities[i].select('.cuadrado');
+            var entidad = {
+                x0: borde.attr('x'),
+                y0: borde.attr('y'),
+                width: borde.attr('width'),
+                height: borde.attr('height'),
+                title: entities[i].select('.titulo').attr('text'),
+                transform: entities[i].attr('transform').toString(),
+                svg_id: entities[i].attr('id'),
+                atributes: []
+            };
+            atributes = entities[i].selectAll('.atributo');
+            for (var j = 0; j < atributes.length; j++) {
+                atribute = atributes[j];
+                atributo = {
+                    info: atribute.attr('text'),
+                    x: atribute.attr('x'),
+                    y: atribute.attr('y'),
+                    atribute_class: atribute.attr('class')
+                };
+                 entidad.atributes.push(atributo);
+            }
+            diagram_entities[i] = entidad;
+        }
+
+        relations = s.selectAll('.relation');
+        for (var i = 0; i < relations.length; i++) {
+            var line = relations[i].select('line');
+            var styles = line.attr('style').toString().split(';');
+            var relation = {
+                arrow_start: styles[1].split(':')[1],
+                arrow_end: styles[2].split(':')[1],
+                relation_class: line.attr('class'),
+                x1: line.attr('x1'),
+                y1: line.attr('y1'),
+                x2: line.attr('x2'),
+                y2: line.attr('y2'),
+                name: relations[i].select('text').attr('text')
+            };
+            diagram_relations[i] = relation;
+        }
+        $('#imagen-svg-entities').val(JSON.stringify(diagram_entities));
+        $('#imagen-svg-relations').val(JSON.stringify(diagram_relations));
     })
 });
 
@@ -68,86 +124,12 @@ function cloneMouseup(event) {
     var y_in_canvas = this.event.clientY -y0;
     //var x_in_canvas = 0;
     //var y_in_canvas = 0;
-
-    // Create elements
-    var rectEntity = s.rect(x_in_canvas, y_in_canvas, 100, 100, 0.5, 0.5);
-    var rectTitle = s.rect(x_in_canvas, y_in_canvas, 100, 30, 0.5, 0.5);
-    var closeButton = s.circle(x_in_canvas + 100, y_in_canvas, 0);
-    var title = s.text(x_in_canvas + 20,y_in_canvas + 20, "Entidad");
-    var attribute = s.text(x_in_canvas + 10,y_in_canvas + 50, "Atributo");
-    var entityOutline = s.group(rectEntity);
-    var titleOutline = s.group(rectTitle , title, closeButton , attribute );
-    var line_handlers_1 = s.circle(x_in_canvas + 50, y_in_canvas, 0);
-    var line_handlers_2 = s.circle(x_in_canvas + 100, y_in_canvas + 50, 0);
-    var line_handlers_3 = s.circle(x_in_canvas + 50, y_in_canvas + 100, 0);
-    var line_handlers_4 = s.circle(x_in_canvas , y_in_canvas + 50, 0);
-    var line_handlers = s.group(line_handlers_1, line_handlers_2, line_handlers_3, line_handlers_4);
-    var entity = s.group(entityOutline, titleOutline, line_handlers);
-
-    // Personalize elements
-    entity.attr({
-        id: "entidad-"+globalID,
-        class: "entidad"
-    });
-    entityOutline.attr ({
-        cursor: "move"
-    });
-    closeButton.attr({
-        class: "closeButton",
-        fill: "#ff0000",
-        stroke: "#ff0000",
-        strokeWidth: 0
-    });
-    title.attr({
-        class: "titulo"
-    });
-    rectTitle.attr({
-        fill: "#ffffff",
-        stroke: "#000",
-        strokeWidth: 2
-    });
-    rectEntity.attr({
-        class: "cuadrado",
-        id: "cuadrado-"+ globalID,
-        fill: "#ffffff",
-        stroke: "#000",
-        strokeWidth: 2
-    });
-    attribute.attr({
-        //class: "atributo atributo-" + globalID
-        class: "atributo"
-    });
-    line_handlers.attr({
-        class: "line-handlers"
-    });
-    line_handlers_1.attr ({
-        class: "handler-1",
-        fill: "#78BF24"
-    });
-    line_handlers_2.attr ({
-        class: "handler-2",
-        fill: "#78BF24"
-    });
-    line_handlers_3.attr ({
-        class: "handler-3",
-        fill: "#78BF24"
-    });
-    line_handlers_4.attr ({
-        class: "handler-4",
-        fill: "#78BF24"
+    client.publish('/entity/create', {
+        x: x_in_canvas,
+        y: y_in_canvas
     });
 
-    addToEntidadesArray(entity);
-
-    // Set events
-    addEntityListener(entity);
-    addCloseButtonListener(closeButton);
-    addTextListeners(title);
-    addTextListeners(attribute);
-    drawRelations(entity.selectAll(".line-handlers circle"), start);
-
-    incrementID();
-
+    //createEntity(x_in_canvas, y_in_canvas);
     // No funciona porque se carga como imagen
     //var loadedImage = s.image("resources/paleta/entidad.svg", x_in_canvas , y_in_canvas , 100, 100);
     //processImage(loadedImage);
@@ -264,9 +246,9 @@ function initializePage() {
                         if(texts[i] != ""){
                             var nuevoNodo = nodoActual.cloneNode(true);
                             if(offset == 0){ //Puede ser atributo[0] o caso inicial de creacion de mas atributos
-                                nuevoNodo.setAttribute("class", nodoActual.getAttribute("class") + "-" + (offset + i));
+                                nuevoNodo.setAttribute("class", "atributo " + nodoActual.getAttribute("class") + "-" + (offset + i));
                             } else { //offset != 0 significa que estoy trabajando con el ultimo atributo
-                                nuevoNodo.setAttribute("class", nodoActual.getAttribute("class").toString().split("-")[0]
+                                nuevoNodo.setAttribute("class", "atributo " + nodoActual.getAttribute("class").toString().split("-")[0]
                                     + "-" + nodoActual.getAttribute("class").toString().split("-")[1] + "-" + (offset + i));
                             }
                             nuevoNodo.setAttribute("y", parseInt(size));
@@ -312,7 +294,13 @@ function initializePage() {
                 }
             }
             input.css("visibility", "hidden");
+            var parent = selectedTitle.parent().parent();
+            client.publish('/entity/updateTitle', {
+                entity_id: parent.attr('id'),
+                text: selectedTitle.attr('text')
+            });
         }
+
     });
 
     var svg = $("#svg");
@@ -425,5 +413,247 @@ function showSVG() {
     alert(svg );
 }
 
+function recreateEntity(entity_data){
+    var x_in_canvas = parseInt(entity_data.x0);
+    var y_in_canvas = parseInt(entity_data.y0);
+    // Create elements
+    var rectEntity = s.rect(x_in_canvas, y_in_canvas, 100, 100, 0.5, 0.5);
+    var rectTitle = s.rect(x_in_canvas, y_in_canvas, 100, 30, 0.5, 0.5);
+    var closeButton = s.circle(x_in_canvas + 100, y_in_canvas, 0);
+    var title = s.text(x_in_canvas + 20,y_in_canvas + 20, entity_data.title);
+    var entityOutline = s.group(rectEntity);
+    //var titleOutline = s.group(rectTitle , title, closeButton , attribute );
+    var titleOutline = s.group(rectTitle , title, closeButton);
+    // For creating the attributes
+        for (var i = 0; i < entity_data.atributes.length; i++) {
+            var attribute = s.text(x_in_canvas + 10, entity_data.atributes[i].y , entity_data.atributes[i].info);
+            addTextListeners(attribute);
+            titleOutline.append(attribute);
+            attribute.attr({
+                //class: "atributo atributo-" + globalID
+                class: entity_data.atributes[i].atribute_class
+            });
+        }
+    var line_handlers_1 = s.circle(x_in_canvas + 50, y_in_canvas, 0);
+    var line_handlers_2 = s.circle(x_in_canvas + 100, y_in_canvas + 50, 0);
+    var line_handlers_3 = s.circle(x_in_canvas + 50, y_in_canvas + 100, 0);
+    var line_handlers_4 = s.circle(x_in_canvas , y_in_canvas + 50, 0);
+    var line_handlers = s.group(line_handlers_1, line_handlers_2, line_handlers_3, line_handlers_4);
+    var entity = s.group(entityOutline, titleOutline, line_handlers);
+
+
+    // Personalize elements
+    entity.attr({
+        id: entity_data.svg_id,
+        class: "entidad",
+        transform: entity_data.transform
+    });
+    entityOutline.attr ({
+        cursor: "move"
+    });
+    closeButton.attr({
+        class: "closeButton",
+        fill: "#ff0000",
+        stroke: "#ff0000",
+        strokeWidth: 0
+    });
+    title.attr({
+        class: "titulo"
+    });
+    rectTitle.attr({
+        fill: "#ffffff",
+        stroke: "#000",
+        strokeWidth: 2
+    });
+
+    rectEntity.attr({
+        class: "cuadrado",
+        id: "cuadrado-"+ entity_data.svg_id.split('-')[1],
+        fill: "#ffffff",
+        stroke: "#000",
+        strokeWidth: 2
+    });
+
+    line_handlers.attr({
+        class: "line-handlers"
+    });
+    line_handlers_1.attr ({
+        class: "handler-1",
+        fill: "#78BF24"
+    });
+    line_handlers_2.attr ({
+        class: "handler-2",
+        fill: "#78BF24"
+    });
+    line_handlers_3.attr ({
+        class: "handler-3",
+        fill: "#78BF24"
+    });
+    line_handlers_4.attr ({
+        class: "handler-4",
+        fill: "#78BF24"
+    });
+
+    addToEntidadesArray(entity);
+
+    // Set events
+    addEntityListener(entity);
+    addCloseButtonListener(closeButton);
+    addTextListeners(title);
+    drawRelations(entity.selectAll(".line-handlers circle"), start);
+
+    incrementID();
+    return entity;
+}
+
+function createEntity(x_in_canvas, y_in_canvas){
+    // Create elements
+    var rectEntity = s.rect(x_in_canvas, y_in_canvas, 100, 100, 0.5, 0.5);
+    var rectTitle = s.rect(x_in_canvas, y_in_canvas, 100, 30, 0.5, 0.5);
+    var closeButton = s.circle(x_in_canvas + 100, y_in_canvas, 0);
+    var title = s.text(x_in_canvas + 20,y_in_canvas + 20, "Entidad");
+    var attribute = s.text(x_in_canvas + 10,y_in_canvas + 50, "Atributo");
+    var entityOutline = s.group(rectEntity);
+    var titleOutline = s.group(rectTitle , title, closeButton , attribute );
+    var line_handlers_1 = s.circle(x_in_canvas + 50, y_in_canvas, 0);
+    var line_handlers_2 = s.circle(x_in_canvas + 100, y_in_canvas + 50, 0);
+    var line_handlers_3 = s.circle(x_in_canvas + 50, y_in_canvas + 100, 0);
+    var line_handlers_4 = s.circle(x_in_canvas , y_in_canvas + 50, 0);
+    var line_handlers = s.group(line_handlers_1, line_handlers_2, line_handlers_3, line_handlers_4);
+    var entity = s.group(entityOutline, titleOutline, line_handlers);
+
+    // Personalize elements
+    entity.attr({
+        id: "entidad-"+globalID,
+        class: "entidad"
+    });
+    entityOutline.attr ({
+        cursor: "move"
+    });
+    closeButton.attr({
+        class: "closeButton",
+        fill: "#ff0000",
+        stroke: "#ff0000",
+        strokeWidth: 0
+    });
+    title.attr({
+        class: "titulo"
+    });
+    rectTitle.attr({
+        fill: "#ffffff",
+        stroke: "#000",
+        strokeWidth: 2
+    });
+    rectEntity.attr({
+        class: "cuadrado",
+        id: "cuadrado-"+ globalID,
+        fill: "#ffffff",
+        stroke: "#000",
+        strokeWidth: 2
+    });
+    attribute.attr({
+        //class: "atributo atributo-" + globalID
+        class: "atributo"
+    });
+    line_handlers.attr({
+        class: "line-handlers"
+    });
+    line_handlers_1.attr ({
+        class: "handler-1",
+        fill: "#78BF24"
+    });
+    line_handlers_2.attr ({
+        class: "handler-2",
+        fill: "#78BF24"
+    });
+    line_handlers_3.attr ({
+        class: "handler-3",
+        fill: "#78BF24"
+    });
+    line_handlers_4.attr ({
+        class: "handler-4",
+        fill: "#78BF24"
+    });
+
+    addToEntidadesArray(entity);
+
+    // Set events
+    addEntityListener(entity);
+    addCloseButtonListener(closeButton);
+    addTextListeners(title);
+    addTextListeners(attribute);
+    drawRelations(entity.selectAll(".line-handlers circle"), start);
+
+    incrementID();
+
+}
+
+function moveEntity(entity, matrix){
+    var entidad = s.select('#'+entity);
+    entidad.attr({
+        transform: matrix
+    });
+}
+
+function adjustText(relation,line){
+    lineBBox = line.getBBox();
+    textBBox = relation.select("text").getBBox();
+    if(Snap.path.isBBoxIntersect(lineBBox, textBBox)){
+        relation.select("text").attr({
+            x: lineBBox.cx - (textBBox.cx - textBBox.x) + 40,
+            y: lineBBox.cy - (textBBox.cy - textBBox.y)
+        });
+    }else{
+        relation.select("text").attr({
+            x: lineBBox.cx - (textBBox.cx - textBBox.x),
+            y: lineBBox.cy - 15
+        });
+    }
+}
+
+function moveEntityRelations(entidad, entidadActual){
+    var lineBBox, textBBox;
+    var position;
+    for(var i = 0; i < entidadActual.from.length; i++) {
+        position = chooseSide(entidadActual.fromPos[i], entidad);
+        var line = entidadActual.from[i].select("line");
+        line.attr({
+            x1: position[0],
+            y1: position[1]
+        });
+        adjustText(entidadActual.from[i], line);
+    }
+    for(var i = 0; i < entidadActual.to.length; i++) {
+        position = chooseSide(entidadActual.toPos[i], entidad);
+        line = entidadActual.to[i].select("line");
+        line.attr({
+            x2: position[0],
+            y2: position[1]
+        });
+        adjustText(entidadActual.to[i], line);
+    }
+}
+
+function moveRelation(entity){
+    var entidad = s.select('#'+entity);
+    var id = entidad.attr("id").split("-");
+    var entidadActual = entidades[id[1]];
+    moveEntityRelations(entidad, entidadActual);
+}
+
+function updateTitle(entity, title){
+    var entidad = s.select('#'+entity);
+    var titulo = entidad.select('.titulo');
+    titulo.attr({
+       text: title
+    });
+}
+
+function createRelation(relation){
+    relacion = recreateRelation(relation);
+    var relations = [];
+    relations.push(relacion);
+    joinRelations(relations);
+}
 window.addEventListener("load", initializePage, false);
 //window.addEventListener("load", loadSVG, false);

@@ -1,0 +1,5 @@
+<% if @diagrams_users.new_record? %>
+    alert('Your Diagram cannot be shared.');
+<% else %>
+    $('#share_text_field').val('');
+<% end %>

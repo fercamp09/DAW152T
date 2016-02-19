@@ -61,4 +61,10 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
+
+gem 'jquery-turbolinks'
+
+# For real time
+gem 'faye-rails', '~> 2.0'
+gem 'thin'

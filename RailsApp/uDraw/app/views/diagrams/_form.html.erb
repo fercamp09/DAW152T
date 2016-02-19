@@ -1,4 +1,4 @@
-<%= form_for(@diagram) do |f| %>
+<%= form_for @diagram do |f| %>
     <% if @diagram.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@diagram.errors.count, "error") %> prohibited this diagram from being saved:</h2>
@@ -14,9 +14,19 @@
       <%= f.label :name %>
       <%= f.text_field :name %><br>
     </div>
+    <!--<div class="field">
+      <@%= f.label :entities %>
+      <@%= f.text_area :entities , size: "60x12", id: 'imagen-svg-entities'%><br>
+    </div>
     <div class="field">
-      <%= f.label :image %>
-      <%= f.text_area :image, size: "60x12", id: 'imagen-svg'%><br>
+      <@%= f.label :relations %>
+      <@%= f.text_area :relations, size: "60x12", id: 'imagen-svg-relations'%><br>
+    </div>-->
+    <div class="field">
+      <%= text_area_tag(:diagram_entities ,"Entities", size: "24x6", id: 'imagen-svg-entities')%><br>
+    </div>
+    <div class="field">
+      <%= text_area_tag(:diagram_relations,"Relations", size: "24x6", id: 'imagen-svg-relations') %><br>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
