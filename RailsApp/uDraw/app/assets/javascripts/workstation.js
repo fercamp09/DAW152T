@@ -186,8 +186,8 @@ function addTextListener (text){
         input.val("");
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
-        input.css("left", "" + event.target.getBoundingClientRect().left + "px");
-        input.css("width", "" + event.target.getBoundingClientRect().width + "px");
+        input.css("left", "" + event.target.parentNode.getBoundingClientRect().left + "px");
+        input.css("width", "" + event.target.parentNode.getBoundingClientRect().width + "px");
         // Cambiar la referencia al titulo actual del doble click
         selectedTitle = this;
     });
@@ -292,13 +292,14 @@ function initializePage() {
                     nodoActual.innerHTML = input.val();
                     addTextListener(nodoActual);
                 }
+                var parent = selectedTitle.parent().parent();
+                client.publish('/entity/updateTitle', {
+                    entity_id: parent.attr('id'),
+                    text: selectedTitle.attr('text')
+                });
             }
             input.css("visibility", "hidden");
-            var parent = selectedTitle.parent().parent();
-            client.publish('/entity/updateTitle', {
-                entity_id: parent.attr('id'),
-                text: selectedTitle.attr('text')
-            });
+
         }
 
     });
@@ -353,8 +354,12 @@ function initializePage() {
                                 markerStartString = "url(#cero-muchos)";
                                 break;
                         }
-                        $(selectedLine.node).css({
+                        /*$(selectedLine.node).css({
                             markerStart: markerStartString
+                        });*/
+                        client.publish('/relation/updateStart', {
+                            relation_id: selectedLine.parent().attr("id"),
+                            marker_start: markerStartString
                         });
                     }
                 }
@@ -385,8 +390,12 @@ function initializePage() {
                                 markerEndString = "url(#cero-muchos-reverse)";
                                 break;
                         }
-                        $(selectedLine.node).css({
+                        /*$(selectedLine.node).css({
                             markerEnd: markerEndString
+                        });*/
+                        client.publish('/relation/updateEnd', {
+                            relation_id: selectedLine.parent().attr("id"),
+                            marker_end: markerEndString
                         });
                     }
                 }
@@ -642,7 +651,7 @@ function moveRelation(entity){
 }
 
 function updateTitle(entity, title){
-    var entidad = s.select('#'+entity);
+    var entidad = s.select('#' + entity);
     var titulo = entidad.select('.titulo');
     titulo.attr({
        text: title
@@ -655,5 +664,47 @@ function createRelation(relation){
     relations.push(relacion);
     joinRelations(relations);
 }
+
+function deleteRelationByID(relation_id){
+    var relation = s.select('#' + relation_id);
+    deleteRelation(relation);
+}
+
+function updateRelationName(relation_id, texto){
+    var relation = s.select('#' + relation_id);
+    var text = relation.select('text');
+    text.attr({
+        text: texto
+    });
+}
+
+function updateStartRelation(relation, markerStartString){
+    var line = selectedLine;
+    selectedLine = relation.select('line');
+    $(selectedLine.node).css({
+        markerStart: markerStartString
+    });
+    selectedLine = line;
+}
+
+function updateStartRelationByID(relation_id, marker){
+    var relation = s.select('#' + relation_id);
+    updateStartRelation(relation, marker);
+}
+
+function updateEndRelation(relation, markerEndString){
+    var line = selectedLine;
+    selectedLine = relation.select('line');
+    $(selectedLine.node).css({
+        markerEnd: markerEndString
+    });
+    selectedLine = line;
+}
+
+function updateEndRelationByID(relation_id, marker){
+    var relation = s.select('#' + relation_id);
+    updateEndRelation(relation, marker);
+}
+
 window.addEventListener("load", initializePage, false);
 //window.addEventListener("load", loadSVG, false);

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220013128) do
+ActiveRecord::Schema.define(version: 20160220153922) do
 
   create_table "atributes", force: :cascade do |t|
     t.string   "info",           limit: 255
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160220013128) do
     t.string   "x",              limit: 255
     t.string   "y",              limit: 255
     t.string   "atribute_class", limit: 255
+    t.string   "svg_id",         limit: 255
   end
 
   add_index "atributes", ["entity_id"], name: "index_atributes_on_entity_id", using: :btree
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160220013128) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "name",           limit: 255
+    t.string   "svg_id",         limit: 255
   end
 
   add_index "relations", ["diagram_id"], name: "index_relations_on_diagram_id", using: :btree

@@ -105,10 +105,17 @@ function addLineListeners (relation){
         function unShowDeleteButton (event){
             this.select(".closeButton").animate({r: 0}, 150);
         });
-
     relation.select(".closeButton").click( function() {
-        this.parent().remove();
+        //deleteRelation(this.parent());
+        client.publish('/relation/delete', {
+            relation_id: this.parent().attr("id")
+        });
     });
+
+}
+
+function deleteRelation(relation){
+    relation.remove();
 }
 
 function addTextListeners (text){
@@ -117,8 +124,8 @@ function addTextListeners (text){
         input.val("");
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
-        input.css("left", "" + event.target.getBoundingClientRect().left + "px");
-        input.css("width", "" + event.target.getBoundingClientRect().width + "px");
+        input.css("left", "" + event.target.parentNode.getBoundingClientRect().left + "px");
+        input.css("width", "" + event.target.parentNode.getBoundingClientRect().width + "px");
         // Cambiar la referencia al titulo actual del doble click
         selectedTitle = this;
     });
@@ -317,17 +324,18 @@ function drawRelations(lineHandlers, start){
                 //entidades[idTo[1]].toPos.push(id2Pos[1]);
                 // Agregar los ids de las entidades como clases de la linea
                 //line.attr({class: "" + idFrom[1] + "-" + id1Pos[1] + "-" + idTo[1] + "-" + id2Pos[1]});
-
-                var parent = event.target.parentElement.parentElement;
+                var id = "" + idFrom[1] + "-" + id1Pos[1] + "-" + idTo[1] + "-" + id2Pos[1];
+                //var parent = event.target.parentElement.parentElement;
                 client.publish('/relation/create', {
-                    relation_class: "" + idFrom[1] + "-" + id1Pos[1] + "-" + idTo[1] + "-" + id2Pos[1],
+                    relation_class: id,
                     x1: lineVariables[0],
                     y1: lineVariables[1],
                     x2: x_in_canvas,
                     y2: y_in_canvas,
                     arrow_start: 'url(#uno)',
                     arrow_end: 'url(#uno-reverse)',
-                    name: "Relacion"
+                    name: "Relacion",
+                    svg_id: "rel" + id
                 });
 
                 // Permite que puedan volver a moverse
@@ -447,7 +455,8 @@ function recreateRelation(relation_data){
     var relationCloseButton = s.circle(relation_data.x1, relation_data.y1, 0);
     var relationGroup = s.g(relationName, line, relationCloseButton);
     relationGroup.attr({
-        class: "relation"
+        class: "relation",
+        id: relation_data.svg_id
     });
     line.attr({
         fill: "#000000",
