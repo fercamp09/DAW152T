@@ -6,11 +6,11 @@ class SessionController < ApplicationController
 
   def create
     #client = Savon.client(ssl_ca_cert_file: "C:/RailsInstaller/cacert.pem", wsdl: "https://ws.espol.edu.ec/saac/wsandroid.asmx?WSDL")
-    #client = Savon.client(ssl_verify_mode: :none, wsdl: "https://ws.espol.edu.ec/saac/wsandroid.asmx?WSDL")
-    #response = client.call(:autenticacion, message: { authUser: params[:session][:email], authContrasenia: params[:session][:password] })
+    client = Savon.client(ssl_verify_mode: :none, wsdl: "https://ws.espol.edu.ec/saac/wsandroid.asmx?WSDL")
+    response = client.call(:autenticacion, message: { authUser: params[:session][:email], authContrasenia: params[:session][:password] })
 
-    #autenticado = response.body[:autenticacion_response][:autenticacion_result]
-    autenticado = true
+    autenticado = response.body[:autenticacion_response][:autenticacion_result]
+    #autenticado = true
 
     if autenticado
       espol_id = params[:session][:email]
