@@ -2,6 +2,8 @@ class DiagramsController < ApplicationController
   before_action :set_diagram, only: [:show, :edit, :update, :destroy, :share]
   before_action :set_diagrams_id, only: [:new]
   before_action :require_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+  before_action :require_editor_or_admin, only: [:show, :edit]
+  before_action :require_admin, only: [:index]
 
   # GET /diagrams
   # GET /diagrams.json
@@ -32,7 +34,7 @@ class DiagramsController < ApplicationController
   # POST /diagrams
   # POST /diagrams.json
   def create
-    @diagram = (User.find_by espol: current_user).diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png'})
+    @diagram = current_user.diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png'})
     #Diagram.new(diagram_params)
     create_diagram
     respond_to do |format|

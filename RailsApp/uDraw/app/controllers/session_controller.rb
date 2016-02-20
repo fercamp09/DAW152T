@@ -1,5 +1,6 @@
 require 'savon'
 class SessionController < ApplicationController
+  before_action :require_admin, only: [:index]
   def new
   end
 
@@ -11,8 +12,10 @@ class SessionController < ApplicationController
     autenticado = response.body[:autenticacion_response][:autenticacion_result]
 
     if autenticado
-      session[:user_id] = params[:session][:email]
-      User.create({ name: session[:user_id], espol: session[:user_id] }) unless User.exists?(espol: session[:user_id])
+      espol_id = params[:session][:email]
+      User.create({ name: session[:user_id], espol: session[:user_id] }) unless User.exists?(espol: espol_id )
+      user = User.find_by(espol: espol_id)
+      session[:user_id] = user.id
       response = client.call(:ws_info_usuario, message: { authUser: params[:session][:email]})
       redirect_to '/window'
     else

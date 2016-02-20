@@ -7,6 +7,18 @@ class User < ActiveRecord::Base
   has_many :shared_diagrams , -> { where shared: true }, class_name: "DiagramsUser"
   has_many :own_diagrams , -> { where shared: nil}, class_name: "DiagramsUser"
 
+  def editor?
+    self.role == 'editor'
+  end
+
+  def admin?
+    self.role == 'admin'
+  end
+
+  def editor_or_admin?
+    self.editor? or self.admin?
+  end
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 

@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217025024) do
+ActiveRecord::Schema.define(version: 20160220013128) do
 
   create_table "atributes", force: :cascade do |t|
-    t.string   "info",       limit: 255
-    t.integer  "entity_id",  limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "x",          limit: 255
-    t.string   "y",          limit: 255
-    t.string   "atribute_class",        limit: 255
+    t.string   "info",           limit: 255
+    t.integer  "entity_id",      limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "x",              limit: 255
+    t.string   "y",              limit: 255
+    t.string   "atribute_class", limit: 255
   end
 
   add_index "atributes", ["entity_id"], name: "index_atributes_on_entity_id", using: :btree
@@ -65,18 +65,18 @@ ActiveRecord::Schema.define(version: 20160217025024) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "relations", force: :cascade do |t|
-    t.string   "arrow_start", limit: 255
-    t.string   "arrow_end",   limit: 255
-    t.string   "relation_class",       limit: 255
-    t.string   "x1",          limit: 255
-    t.string   "y1",          limit: 255
-    t.string   "x2",          limit: 255
-    t.string   "y2",          limit: 255
-    t.integer  "entity_id",   limit: 4
-    t.integer  "diagram_id",  limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "name",        limit: 255
+    t.string   "arrow_start",    limit: 255
+    t.string   "arrow_end",      limit: 255
+    t.string   "relation_class", limit: 255
+    t.string   "x1",             limit: 255
+    t.string   "y1",             limit: 255
+    t.string   "x2",             limit: 255
+    t.string   "y2",             limit: 255
+    t.integer  "entity_id",      limit: 4
+    t.integer  "diagram_id",     limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "name",           limit: 255
   end
 
   add_index "relations", ["diagram_id"], name: "index_relations_on_diagram_id", using: :btree
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160217025024) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.datetime "remember_created_at"
+    t.string   "role",                limit: 255
   end
 
   add_foreign_key "atributes", "entities"

@@ -25,11 +25,23 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= session[:user_id] if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def require_user
     redirect_to '/login' unless current_user
+  end
+
+  def require_editor
+    redirect_to window_url unless current_user.editor?
+  end
+
+  def require_editor_or_admin
+    redirect_to window_url unless current_user.editor_or_admin?
+  end
+
+  def require_admin
+    redirect_to window_url unless current_user.admin?
   end
 
   private
@@ -39,7 +51,7 @@ class ApplicationController < ActionController::Base
 
   def set_my_documents
      #@my_documents = (User.find_by espol: current_user).own_diagrams
-     @my_documents =  (User.find_by espol: current_user).own_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
+     @my_documents =  current_user.own_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
     #@my_documents = Diagram.all
   end
 
@@ -47,7 +59,7 @@ class ApplicationController < ActionController::Base
     #@shared_documents = (User.find_by espol: 'ferecamp').diagrams_users.where(shared: true)
     #@shared_documents = User.first.shared_diagrams
     #@shared_documents = Diagram.joins(:users).where(: 'ferecamp')
-    @shared_documents =  (User.find_by espol: current_user).shared_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
+    @shared_documents =  current_user.shared_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
     #@shared_documents = Diagram.all
   end
 end
