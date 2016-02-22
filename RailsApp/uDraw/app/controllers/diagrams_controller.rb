@@ -4,6 +4,7 @@ class DiagramsController < ApplicationController
   before_action :require_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   before_action :require_editor_or_admin, only: [:show, :edit]
   before_action :require_admin, only: [:index]
+  before_action :require_owner, only: [:show, :edit]
 
   # GET /diagrams
   # GET /diagrams.json
@@ -40,7 +41,7 @@ class DiagramsController < ApplicationController
     respond_to do |format|
       if @diagram.save
         format.html { redirect_to window_path, notice: 'Diagram was successfully created.' }
-        format.json { render :show, status: :created, location: @diagram }
+        format.json { render :show, status: :created, location: @diagram, notice: 'Diagram was successfully created.'  }
       else
         format.html { render :new }
         format.json { render json: @diagram.errors, status: :unprocessable_entity }
@@ -116,5 +117,14 @@ class DiagramsController < ApplicationController
     relations_hash.each {|hash|
       diagram = @diagram.relations.create(hash)
     }
+  end
+
+  def owner_diagram?
+    #self.diagram_user
+    @diagram.diagrams_users.exists?(user_id: current_user.id)
+  end
+
+  def require_owner
+    redirect_to window_url unless owner_diagram? or current_user.admin?
   end
 end

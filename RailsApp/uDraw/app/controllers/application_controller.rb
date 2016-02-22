@@ -36,6 +36,8 @@ class ApplicationController < ActionController::Base
     redirect_to window_url unless current_user.editor?
   end
 
+
+
   def require_editor_or_admin
     redirect_to window_url unless current_user.editor_or_admin?
   end

@@ -15,18 +15,15 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-    <div class="field">
-      <%= f.label :twitter %><br>
-      <%= f.text_field :twitter %>
-    </div>
-    <div class="field">
-      <%= f.label :facebook %><br>
-      <%= f.text_field :facebook %>
-    </div>
-    <div class="field">
-      <%= f.label :google %><br>
-      <%= f.text_field :google %>
-    </div>
+    <a href="/users/auth/facebook" class="btn btn-block btn-social btn-facebook">
+      <span class="fa fa-facebook"></span> Agregar cuenta de Facebook
+    </a>
+    <a href="/users/auth/twitter" class="btn btn-block btn-social btn-twitter">
+      <span class="fa fa-twitter"></span> Agregar cuenta de Twitter
+    </a>
+    <a href="users/auth/google_oauth2" class="btn btn-block btn-social btn-google">
+      <span class="fa fa-google"></span> Agregar cuenta de Google
+    </a>
     <div class="field">
       <%= f.label :espol %><br>
       <%= f.text_field :espol %>

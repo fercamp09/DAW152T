@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
     self.editor? or self.admin?
   end
 
+
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
@@ -34,7 +36,6 @@ class User < ActiveRecord::Base
     # Note that this may leave zombie accounts (with no associated identity) which
     # can be cleaned up at a later date.
     user = signed_in_resource ? signed_in_resource : identity.user
-
     # Create the user if needed
     if user.nil?
 
@@ -63,6 +64,8 @@ class User < ActiveRecord::Base
       identity.user = user
       #identity.save
     end
+    identity.user_id = user.id
+    identity.save!
     user
   end
 end
