@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user_exists, only: [:show, :edit]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:index, :show, :edit, :update, :destroy]
   before_action :require_admin, only: [:index]
@@ -72,4 +73,16 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :twitter, :facebook, :espol, :google)
     end
+
+  def user_exists?
+    @user = User.find_by_id (params[:id])
+    #@diagram ? true : false
+  end
+
+  def require_user_exists
+    redirect_to window_url unless user_exists?
+  end
+
+
 end
+

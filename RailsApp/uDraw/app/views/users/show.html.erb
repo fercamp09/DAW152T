@@ -11,7 +11,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Edit:</strong>
+  <strong>UserId:</strong>
+  <%= @user.id  %>
+</p>
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.name  %>
+</p>
+
+<p>
+  <strong>Cuenta Espol:</strong>
+  <%= @user.espol %>
+</p>
+
+<p>
+  <strong>Cuenta Facebook:</strong>
+  <%= @user.facebook  %>
+</p>
+
+<p>
+  <strong>Cuenta Twitter:</strong>
+  <%= @user.twitter  %>
+</p>
+
+<p>
+  <strong>Cuenta Google:</strong>
+  <%= @user.google  %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
