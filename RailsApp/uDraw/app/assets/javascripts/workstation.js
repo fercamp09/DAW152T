@@ -19,11 +19,6 @@ $(document).ready(
         $(".btn-share").click(function() {
             $( ".highlight" ).effect( "highlight" );
         });
-
-        //client = new Faye.Client('/faye');
-        //client.subscribe('/diagrams', function(message){
-        //    console.log('Got a message' + message.text);
-        //});
     });
 
 
@@ -64,7 +59,8 @@ $(document).ready(function(){
                     info: atribute.attr('text'),
                     x: atribute.attr('x'),
                     y: atribute.attr('y'),
-                    atribute_class: atribute.attr('class')
+                    atribute_class: atribute.attr('class'),
+                    svg_id: atribute.attr('id')
                 };
                  entidad.atributes.push(atributo);
             }
@@ -83,7 +79,8 @@ $(document).ready(function(){
                 y1: line.attr('y1'),
                 x2: line.attr('x2'),
                 y2: line.attr('y2'),
-                name: relations[i].select('text').attr('text')
+                name: relations[i].select('text').attr('text'),
+                svg_id: relations[i].attr('id')
             };
             diagram_relations[i] = relation;
         }
@@ -233,25 +230,31 @@ function initializePage() {
     input.keypress(function (e) {
         nodoActual = selectedTitle.node || selectedTitle;
         rectangulo = nodoActual.parentNode.parentNode.children[0].children[0];
+        var rectChildren = nodoActual.parentNode.children;
         var input = $("#modificadorTexto");
         if (e.keyCode == 13) {
             count = 0;
+            // Para el enter en el ultimo atributo de la entidad
             if(nodoActual == nodoActual.parentNode.lastElementChild){
+                // Eliminar el ultimo atributo
                 if(input.val() != ""){
-                    //offset es una variable para indicar el ultimo numero de la clase de la entidad actual, o cero en caso de no existir
-                    offset = parseInt(nodoActual.getAttribute("class").toString().split("-")[2])|| 0;
+                    // offset es una variable para indicar el ultimo numero de id de la entidad actual, o cero en caso de no existir
+                    offset = parseInt(nodoActual.getAttribute("id").toString().split("-")[2]) || 0;
                     size = nodoActual.getAttribute("y");
+                    // Dividir el texto del input en un arreglo de textos, cada uno sera un nuevo atributo
                     texts = input.val().toString().split(",");
+                    var entidad_id = nodoActual.parentNode.parentNode.getAttribute('id').split("-")[1];
                     for(i = 0; i < texts.length; i++){
                         if(texts[i] != ""){
+                            $(nodoActual).removeAttr('id');
                             var nuevoNodo = nodoActual.cloneNode(true);
-                            if(offset == 0){ //Puede ser atributo[0] o caso inicial de creacion de mas atributos
-                                nuevoNodo.setAttribute("class", "atributo " + nodoActual.getAttribute("class") + "-" + (offset + i));
-                            } else { //offset != 0 significa que estoy trabajando con el ultimo atributo
-                                nuevoNodo.setAttribute("class", "atributo " + nodoActual.getAttribute("class").toString().split("-")[0]
-                                    + "-" + nodoActual.getAttribute("class").toString().split("-")[1] + "-" + (offset + i));
-                            }
-                            nuevoNodo.setAttribute("y", parseInt(size));
+                            //if(offset == 0){ //Puede ser atributo[0] o caso inicial de creacion de mas atributos
+                                nuevoNodo.setAttribute("id", "atrib" + "-" + entidad_id + "-" + offset++);
+                            //} else { //offset != 0 significa que estoy trabajando con el ultimo atributo
+                            //    nuevoNodo.setAttribute("id", nodoActual.getAttribute("id").toString().split("-")[0]
+                            //        + "-" + nodoActual.getAttribute("id").toString().split("-")[1] + "-" + (offset + i));
+                            //}
+                            nuevoNodo.setAttribute("y", size);
                             nuevoNodo.innerHTML = texts[i];
                             nodoActual.parentNode.appendChild(nuevoNodo);
                             size = parseInt(size) + 18;
@@ -261,44 +264,67 @@ function initializePage() {
                     }
                     rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height")) + parseInt(20*(count-1)));
                     position = parseInt(rectangulo.getAttribute("height"));
-                    //nodoActual.parentNode.parentNode.children[2].children[1].setAttribute("cy", position/2);
-                    //nodoActual.parentNode.parentNode.children[2].children[2].setAttribute("cy", position);
-                    //nodoActual.parentNode.parentNode.children[2].children[3].setAttribute("cy", position/2);
                     nodoActual.parentNode.removeChild(nodoActual);
+                    input.css("visibility", "hidden");
+                    console.log('aumento_atributos');
+
                 }
-            } else if(nodoActual == nodoActual.parentNode.children[1] || nodoActual == nodoActual.parentNode.children[0]){
+                // Para el enter en el titulo de la entidad
+            } else if(nodoActual == rectChildren[1] || nodoActual == rectChildren[0]){
                 if(input.val() != ""){
                     nodoActual.innerHTML = input.val();
+                    var parent = selectedTitle.parent();
+                    if (parent.attr('id')){
+                        client.publish('/relation/updateName', {
+                            relation_id: parent.attr('id'),
+                            text: selectedTitle.attr('text')
+                        });
+                    }else {
+                        client.publish('/entity/updateTitle', {
+                            entity_id: parent.parent().attr('id'),
+                            text: selectedTitle.attr('text')
+                        });
+                    }
                 }
+                // Para el enter en los atributos de la entidad
             } else {
                 var whois, w;
+                // Eliminar un atributo
                 if(input.val() == ""){
-                    rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height") - parseInt(20)));
+                    rectHeight = parseInt(rectangulo.getAttribute("height"));
+                    rectangulo.setAttribute("height", rectHeight - 20);
                     position = parseInt(rectangulo.getAttribute("height"));
-                    //nodoActual.parentNode.parentNode.children[2].children[1].setAttribute("cy", position/2);
-                    //nodoActual.parentNode.parentNode.children[2].children[2].setAttribute("cy", position);
-                    //nodoActual.parentNode.parentNode.children[2].children[3].setAttribute("cy", position/2);
-                    for(w = 0; w < nodoActual.parentNode.children.length; w++){
-                        if(nodoActual == nodoActual.parentNode.children[w]){
+                    // Identificar el numero del atributo que quedo vacio
+                    for(w = 0; w < rectChildren.length; w++){
+                        if(nodoActual == rectChildren[w]){
                             whois = w;
                         }
                     }
-                    for(w = (whois+1); w < nodoActual.parentNode.children.length; w++){
-                        var resize = nodoActual.parentNode.children[w].getAttribute("y");
-                        nodoActual.parentNode.children[w].setAttribute("y", parseInt(resize - 18));
+                    // Recorrer los atributos, desde el siguiente al que quedo vacio y subirlos
+                    for(w = (whois+1); w < rectChildren.length; w++){
+                        var resize = rectChildren[w].getAttribute("y");
+                        rectChildren[w].setAttribute("y", parseInt(resize) - 18);
                     }
+                    // Remover el atributo que quedo vacio
                     nodoActual.parentNode.removeChild(nodoActual);
+                    console.log('eliminar atributo');
+                    client.publish('/atribute/delete', {
+                        atribute_id: nodoActual.getAttribute('id'),
+                    });
+                    // Editar un atributo
                 } else {
-                    nodoActual.innerHTML = input.val();
+                    //nodoActual.innerHTML = input.val();
+                    var text = input.val();
                     addTextListener(nodoActual);
+                    console.log('editar atributo');
+                    client.publish('/atribute/updateName', {
+                        atribute_id: nodoActual.getAttribute('id'),
+                        text: text
+                    });
                 }
             }
             input.css("visibility", "hidden");
-            var parent = selectedTitle.parent().parent();
-            client.publish('/entity/updateTitle', {
-                entity_id: parent.attr('id'),
-                text: selectedTitle.attr('text')
-            });
+
         }
 
     });
@@ -432,14 +458,15 @@ function recreateEntity(entity_data){
     var entityOutline = s.group(rectEntity);
     //var titleOutline = s.group(rectTitle , title, closeButton , attribute );
     var titleOutline = s.group(rectTitle , title, closeButton);
-    // For creating the attributes
+    // For recreating the attributes
         for (var i = 0; i < entity_data.atributes.length; i++) {
             var attribute = s.text(x_in_canvas + 10, entity_data.atributes[i].y , entity_data.atributes[i].info);
             addTextListeners(attribute);
             titleOutline.append(attribute);
             attribute.attr({
                 //class: "atributo atributo-" + globalID
-                class: entity_data.atributes[i].atribute_class
+                class: entity_data.atributes[i].atribute_class,
+                id: entity_data.atributes[i].svg_id
             });
         }
     var line_handlers_1 = s.circle(x_in_canvas + 50, y_in_canvas, 0);
@@ -561,7 +588,8 @@ function createEntity(x_in_canvas, y_in_canvas){
     });
     attribute.attr({
         //class: "atributo atributo-" + globalID
-        class: "atributo"
+        class: "atributo",
+        id: "atrib-"+ globalID + '-0'
     });
     line_handlers.attr({
         class: "line-handlers"
@@ -703,6 +731,21 @@ function updateEndRelation(relation, markerEndString){
 function updateEndRelationByID(relation_id, marker){
     var relation = s.select('#' + relation_id);
     updateEndRelation(relation, marker);
+}
+
+function updateAtributeName(atribute_id, text){
+    var atribute = s.select('#' + atribute_id);
+    atribute .attr({
+        text: text
+    });
+}
+
+function deleteAtribute(atribute_id){
+
+}
+
+function increaseAtributes(atribute_id, text){
+
 }
 
 window.addEventListener("load", initializePage, false);

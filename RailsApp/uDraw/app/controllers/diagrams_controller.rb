@@ -111,7 +111,7 @@ class DiagramsController < ApplicationController
     entities_hash.each {|key, value|
       entity = @diagram.entities.create({height: value['height'], width: value['width'], y0: value['y0'], x0: value['x0'], title: value['title'], transform: value['transform'], svg_id: value['svg_id']})
       value['atributes'].each { |hash|
-        entity.atributes.create({info: hash['info'], x: hash['x'], y: hash['y'], atribute_class: hash['atribute_class']})
+        entity.atributes.create({info: hash['info'], x: hash['x'], y: hash['y'], atribute_class: hash['atribute_class'], svg_id: hash['svg_id']})
       }
     }
     relations_hash.each {|hash|

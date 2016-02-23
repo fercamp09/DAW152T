@@ -77,3 +77,26 @@ jQuery ->
   client.subscribe '/relation/updateName', (message) ->
     updateRelationName(message.relation_id, message.text);
 
+  try
+    client.unsubscribe '/atribute/updateName'
+  catch
+    console?.log "Can't unsubscribe." # print a message only if console is defined
+
+  client.subscribe '/atribute/updateName', (message) ->
+    updateAtributeName(message.atribute_id, message.text);
+
+  try
+    client.unsubscribe '/atribute/delete'
+  catch
+    console?.log "Can't unsubscribe." # print a message only if console is defined
+
+  client.subscribe '/atribute/delete', (message) ->
+    deleteAtribute(message.atribute_id);
+
+  try
+    client.unsubscribe '/atribute/increase'
+  catch
+    console?.log "Can't unsubscribe." # print a message only if console is defined
+
+  client.subscribe '/atribute/increase', (message) ->
+    increaseAtributes(message.atribute_id, message.text);
