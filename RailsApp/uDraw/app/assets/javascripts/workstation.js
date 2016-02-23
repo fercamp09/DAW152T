@@ -190,6 +190,32 @@ function addTextListener (text){
     });
 }
 
+
+function increaseAtributes(entidad_id, atribute_id , text, size, count, offset){
+    var texts = text.split(",");
+    nodoActual = document.getElementById(atribute_id);
+    rectangulo = nodoActual.parentNode.parentNode.children[0].children[0];
+    console.log(texts);
+    console.log(nodoActual);
+    console.log(rectangulo);
+
+    for(var i = 0; i < texts.length; i++){
+        if(texts[i] != ""){
+            $(nodoActual).removeAttr('id');
+            var nuevoNodo = nodoActual.cloneNode(true);
+            nuevoNodo.setAttribute("id", "atrib" + "-" + entidad_id + "-" + offset++);
+            nuevoNodo.setAttribute("y", size);
+            nuevoNodo.innerHTML = texts[i];
+            nodoActual.parentNode.appendChild(nuevoNodo);
+            size = parseInt(size) + 18;
+            addTextListener(nuevoNodo);
+            count = count + 1;
+        }
+    }
+    rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height")) + parseInt(20*(count-1)));
+    //position = parseInt(rectangulo.getAttribute("height"));
+    nodoActual.parentNode.removeChild(nodoActual);
+}
 function initializePage() {
     // Enable pusher logging - don't include this in production
     /*Pusher.log = function(message) {
@@ -236,14 +262,23 @@ function initializePage() {
             count = 0;
             // Para el enter en el ultimo atributo de la entidad
             if(nodoActual == nodoActual.parentNode.lastElementChild){
-                // Eliminar el ultimo atributo
+                // Aumentar atributos desde el ultimo atributo
                 if(input.val() != ""){
                     // offset es una variable para indicar el ultimo numero de id de la entidad actual, o cero en caso de no existir
                     offset = parseInt(nodoActual.getAttribute("id").toString().split("-")[2]) || 0;
                     size = nodoActual.getAttribute("y");
                     // Dividir el texto del input en un arreglo de textos, cada uno sera un nuevo atributo
-                    texts = input.val().toString().split(",");
+                    //texts = input.val().toString().split(",");
                     var entidad_id = nodoActual.parentNode.parentNode.getAttribute('id').split("-")[1];
+                    client.publish('/atribute/increase', {
+                        entidad_id: entidad_id,
+                        atribute_id: nodoActual.getAttribute("id"),
+                        texts: input.val().toString(),
+                        size: size,
+                        count: count,
+                        offset: offset
+                    });
+                    /*
                     for(i = 0; i < texts.length; i++){
                         if(texts[i] != ""){
                             $(nodoActual).removeAttr('id');
@@ -264,10 +299,9 @@ function initializePage() {
                     }
                     rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height")) + parseInt(20*(count-1)));
                     position = parseInt(rectangulo.getAttribute("height"));
-                    nodoActual.parentNode.removeChild(nodoActual);
+                    nodoActual.parentNode.removeChild(nodoActual);*/
                     input.css("visibility", "hidden");
                     console.log('aumento_atributos');
-
                 }
                 // Para el enter en el titulo de la entidad
             } else if(nodoActual == rectChildren[1] || nodoActual == rectChildren[0]){
@@ -291,10 +325,10 @@ function initializePage() {
                 var whois, w;
                 // Eliminar un atributo
                 if(input.val() == ""){
-                    rectHeight = parseInt(rectangulo.getAttribute("height"));
-                    rectangulo.setAttribute("height", rectHeight - 20);
-                    position = parseInt(rectangulo.getAttribute("height"));
-                    // Identificar el numero del atributo que quedo vacio
+                    var rectHeight = parseInt(rectangulo.getAttribute("height"));
+                    //rectangulo.setAttribute("height", rectHeight - 20);
+                    //position = parseInt(rectangulo.getAttribute("height"));
+                    /*// Identificar el numero del atributo que quedo vacio
                     for(w = 0; w < rectChildren.length; w++){
                         if(nodoActual == rectChildren[w]){
                             whois = w;
@@ -304,12 +338,13 @@ function initializePage() {
                     for(w = (whois+1); w < rectChildren.length; w++){
                         var resize = rectChildren[w].getAttribute("y");
                         rectChildren[w].setAttribute("y", parseInt(resize) - 18);
-                    }
+                    }*/
                     // Remover el atributo que quedo vacio
-                    nodoActual.parentNode.removeChild(nodoActual);
+                    //nodoActual.parentNode.removeChild(nodoActual);
                     console.log('eliminar atributo');
                     client.publish('/atribute/delete', {
                         atribute_id: nodoActual.getAttribute('id'),
+                        rect_height:  rectHeight
                     });
                     // Editar un atributo
                 } else {
@@ -324,9 +359,7 @@ function initializePage() {
                 }
             }
             input.css("visibility", "hidden");
-
         }
-
     });
 
     var svg = $("#svg");
@@ -740,13 +773,26 @@ function updateAtributeName(atribute_id, text){
     });
 }
 
-function deleteAtribute(atribute_id){
-
+function deleteAtribute(atribute_id, rectHeight){
+    var nodoActual = document.getElementById(atribute_id);
+    var rectChildren = nodoActual.parentNode.children;
+    var rectangulo = nodoActual.parentNode.parentNode.children[0].children[0];
+    rectangulo.setAttribute("height", rectHeight - 20);
+    // Identificar el numero del atributo que quedo vacio
+    for(var w = 0; w < rectChildren.length; w++){
+        if(nodoActual == rectChildren[w]){
+            whois = w;
+        }
+    }
+    // Recorrer los atributos, desde el siguiente al que quedo vacio y subirlos
+    for(w = ( whois + 1 ); w < rectChildren.length; w++){
+        var resize = rectChildren[w].getAttribute("y");
+        rectChildren[w].setAttribute("y", parseInt(resize) - 18);
+    }
+    // Remover el atributo que quedo vacio
+    nodoActual.parentNode.removeChild(nodoActual);
 }
 
-function increaseAtributes(atribute_id, text){
-
-}
 
 window.addEventListener("load", initializePage, false);
 //window.addEventListener("load", loadSVG, false);

@@ -91,7 +91,7 @@ jQuery ->
     console?.log "Can't unsubscribe." # print a message only if console is defined
 
   client.subscribe '/atribute/delete', (message) ->
-    deleteAtribute(message.atribute_id);
+    deleteAtribute(message.atribute_id, message.rect_height);
 
   try
     client.unsubscribe '/atribute/increase'
@@ -99,4 +99,4 @@ jQuery ->
     console?.log "Can't unsubscribe." # print a message only if console is defined
 
   client.subscribe '/atribute/increase', (message) ->
-    increaseAtributes(message.atribute_id, message.text);
+    increaseAtributes(message.entidad_id, message.atribute_id , message.texts, message.size, message.count, message.offset);
