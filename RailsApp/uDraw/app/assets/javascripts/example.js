@@ -121,7 +121,7 @@ function deleteRelation(relation){
 function addTextListeners (text){
     text.dblclick(function (event) {
         var input = $("#modificadorTexto");
-        input.val("");
+        input.val(this.attr('text'));
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
         input.css("left", "" + event.target.parentNode.getBoundingClientRect().left + "px");
