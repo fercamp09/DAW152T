@@ -1,11 +1,24 @@
-<p id="notice"><%= notice %></p>
 
+<head>
+  <%= stylesheet_link_tag "estilo-principal", media: "all" %>
+  <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
+  <%= stylesheet_link_tag "estilo-window", media: "all" %>
+  <%= stylesheet_link_tag "menu-principal", media: "all" %>
+  <%= javascript_include_tag "window" %>
+  <%= javascript_include_tag "FileSaver"%>
+</head>
+<%= render 'menu_application' %>
 <h1>Listing Users</h1>
-
-<table>
+<p id="notice"><%= notice %></p>
+<table class="table">
   <thead>
     <tr>
-      <th>Edit</th>
+      <th>Usuario</th>
+      <th>Role</th>
+      <th>Espol</th>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Goggle</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,6 +26,12 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= link_to user.name, user%></td>
+        <td><%= user.role %></td>
+        <td><%= user.espol %></td>
+        <td><%= user.facebook %></td>
+        <td><%= user.twitter %></td>
+        <td><%= user.google %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

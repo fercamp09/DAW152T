@@ -4,7 +4,8 @@ class DiagramsController < ApplicationController
   before_action :require_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   before_action :require_editor_or_admin, only: [:show, :edit]
   before_action :require_admin, only: [:index]
-  before_action :require_owner, only: [:show, :edit]
+  before_action :require_shared, only: [:show, :edit]
+  before_action :require_owner, only: [:destroy]
 
   # GET /diagrams
   # GET /diagrams.json
@@ -121,10 +122,21 @@ class DiagramsController < ApplicationController
 
   def owner_diagram?
     #self.diagram_user
+    @diagram.diagrams_users.exists?(user_id: current_user.id, shared: nil)
+
+  end
+
+  def belongs_to_user?
+    #self.diagram_user
     @diagram.diagrams_users.exists?(user_id: current_user.id)
+
   end
 
   def require_owner
     redirect_to window_url unless owner_diagram? or current_user.admin?
+  end
+
+  def require_shared
+    redirect_to window_url unless belongs_to_user? or current_user.admin?
   end
 end
