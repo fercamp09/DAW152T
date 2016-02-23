@@ -1,4 +1,5 @@
 class DiagramsController < ApplicationController
+  before_action :require_diagram_exists, only: [:show, :edit]
   before_action :set_diagram, only: [:show, :edit, :update, :destroy, :share]
   before_action :set_diagrams_id, only: [:new]
   before_action :require_user, only: [:index, :show, :new, :edit, :create, :update, :destroy]
@@ -90,7 +91,7 @@ class DiagramsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_diagram
-    @diagram = Diagram.find(params[:id])
+    @diagram = Diagram.find_by_id (params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
@@ -123,13 +124,11 @@ class DiagramsController < ApplicationController
   def owner_diagram?
     #self.diagram_user
     @diagram.diagrams_users.exists?(user_id: current_user.id, shared: nil)
-
   end
 
   def belongs_to_user?
     #self.diagram_user
     @diagram.diagrams_users.exists?(user_id: current_user.id)
-
   end
 
   def require_owner
@@ -139,4 +138,14 @@ class DiagramsController < ApplicationController
   def require_shared
     redirect_to window_url unless belongs_to_user? or current_user.admin?
   end
+
+  def diagram_exists?
+    @diagram = Diagram.find_by_id (params[:id])
+    #@diagram ? true : false
+  end
+
+  def require_diagram_exists
+    redirect_to window_url unless diagram_exists?
+  end
+
 end
