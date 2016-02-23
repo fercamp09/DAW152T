@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :require_user
 
+  def not_found
+    respond_to do |format|
+      format.html { render status: 404 }
+    end
+  rescue ActionController::UnknownFormat
+    render status: 404, text: "nope"
+  end
+
   def index
   end
 
@@ -66,4 +74,8 @@ class ApplicationController < ActionController::Base
     @shared_documents =  current_user.shared_diagrams.map do |d| (Diagram.find_by id: d.diagram_id) end
     #@shared_documents = Diagram.all
   end
+
+
+
+
 end

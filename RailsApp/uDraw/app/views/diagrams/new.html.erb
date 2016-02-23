@@ -57,7 +57,7 @@
       <span class='st_googleplus' displayText='Google +'></span>
       <%= form_tag("/share/"+String(@diagrams_id),remote:true, method: "post") do %>
           <%= label_tag(:q, "Compartir con:", class:'highlight') %>
-          <%= text_field_tag(:share_user, id: "share_text_field", :size=> 10) %>
+          <%= text_field_tag(:share_user,nil, id: "share_text_field", :size=> 10) %>
           <%= submit_tag("Compartir", class:'btn-share')%>
       <% end %>
     </div>

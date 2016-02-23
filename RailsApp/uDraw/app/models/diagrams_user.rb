@@ -3,7 +3,7 @@ class DiagramsUser < ActiveRecord::Base
   belongs_to :diagram
 
 
-  def belongs?
+  def exists?
     self.diagram == current_user.diagrams
   end
 
