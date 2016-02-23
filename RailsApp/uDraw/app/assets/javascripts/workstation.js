@@ -35,59 +35,63 @@ $(document).ready(
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
     $('#guardar').click(function(){
-        var diagram_entities = Object.create(null);
-        //var diagram_entities = [];
-        var diagram_relations = [];
-
-        var entities = s.selectAll('.entidad');
-        for (var i = 0; i < entities.length; i++) {
-            var borde = entities[i].select('.cuadrado');
-            var entidad = {
-                x0: borde.attr('x'),
-                y0: borde.attr('y'),
-                width: borde.attr('width'),
-                height: borde.attr('height'),
-                title: entities[i].select('.titulo').attr('text'),
-                transform: entities[i].attr('transform').toString(),
-                svg_id: entities[i].attr('id'),
-                atributes: []
-            };
-            atributes = entities[i].selectAll('.atributo');
-            for (var j = 0; j < atributes.length; j++) {
-                atribute = atributes[j];
-                atributo = {
-                    info: atribute.attr('text'),
-                    x: atribute.attr('x'),
-                    y: atribute.attr('y'),
-                    atribute_class: atribute.attr('class'),
-                    svg_id: atribute.attr('id')
-                };
-                 entidad.atributes.push(atributo);
-            }
-            diagram_entities[i] = entidad;
-        }
-
-        relations = s.selectAll('.relation');
-        for (var i = 0; i < relations.length; i++) {
-            var line = relations[i].select('line');
-            var styles = line.attr('style').toString().split(';');
-            var relation = {
-                arrow_start: styles[1].split(':')[1],
-                arrow_end: styles[2].split(':')[1],
-                relation_class: line.attr('class'),
-                x1: line.attr('x1'),
-                y1: line.attr('y1'),
-                x2: line.attr('x2'),
-                y2: line.attr('y2'),
-                name: relations[i].select('text').attr('text'),
-                svg_id: relations[i].attr('id')
-            };
-            diagram_relations[i] = relation;
-        }
-        $('#imagen-svg-entities').val(JSON.stringify(diagram_entities));
-        $('#imagen-svg-relations').val(JSON.stringify(diagram_relations));
+        saveDiagram();
     })
 });
+
+function saveDiagram(){
+    var diagram_entities = Object.create(null);
+    //var diagram_entities = [];
+    var diagram_relations = [];
+
+    var entities = s.selectAll('.entidad');
+    for (var i = 0; i < entities.length; i++) {
+        var borde = entities[i].select('.cuadrado');
+        var entidad = {
+            x0: borde.attr('x'),
+            y0: borde.attr('y'),
+            width: borde.attr('width'),
+            height: borde.attr('height'),
+            title: entities[i].select('.titulo').attr('text'),
+            transform: entities[i].attr('transform').toString(),
+            svg_id: entities[i].attr('id'),
+            atributes: []
+        };
+        atributes = entities[i].selectAll('.atributo');
+        for (var j = 0; j < atributes.length; j++) {
+            atribute = atributes[j];
+            atributo = {
+                info: atribute.attr('text'),
+                x: atribute.attr('x'),
+                y: atribute.attr('y'),
+                atribute_class: atribute.attr('class'),
+                svg_id: atribute.attr('id')
+            };
+            entidad.atributes.push(atributo);
+        }
+        diagram_entities[i] = entidad;
+    }
+
+    relations = s.selectAll('.relation');
+    for (var i = 0; i < relations.length; i++) {
+        var line = relations[i].select('line');
+        var styles = line.attr('style').toString().split(';');
+        var relation = {
+            arrow_start: styles[1].split(':')[1],
+            arrow_end: styles[2].split(':')[1],
+            relation_class: line.attr('class'),
+            x1: line.attr('x1'),
+            y1: line.attr('y1'),
+            x2: line.attr('x2'),
+            y2: line.attr('y2'),
+            name: relations[i].select('text').attr('text'),
+            svg_id: relations[i].attr('id')
+        };
+        diagram_relations[i] = relation;
+    }
+    $('#imagen-svg-entities').val(JSON.stringify(diagram_entities));
+    $('#imagen-svg-relations').val(JSON.stringify(diagram_relations));
+}
 
 $(function() {
     $( "#accordion-resizer" ).resizable({
@@ -121,11 +125,10 @@ function cloneMouseup(event) {
     var y_in_canvas = this.event.clientY -y0;
     //var x_in_canvas = 0;
     //var y_in_canvas = 0;
-    client.publish('/entity/create', {
+    client.publish('/entity/create/'+ gon.diagram_id, {
         x: x_in_canvas,
         y: y_in_canvas
     });
-
     //createEntity(x_in_canvas, y_in_canvas);
     // No funciona porque se carga como imagen
     //var loadedImage = s.image("resources/paleta/entidad.svg", x_in_canvas , y_in_canvas , 100, 100);
@@ -190,7 +193,6 @@ function addTextListener (text){
     });
 }
 
-
 function increaseAtributes(entidad_id, atribute_id , text, size, count, offset){
     var texts = text.split(",");
     nodoActual = document.getElementById(atribute_id);
@@ -216,6 +218,7 @@ function increaseAtributes(entidad_id, atribute_id , text, size, count, offset){
     //position = parseInt(rectangulo.getAttribute("height"));
     nodoActual.parentNode.removeChild(nodoActual);
 }
+
 function initializePage() {
     // Enable pusher logging - don't include this in production
     /*Pusher.log = function(message) {
@@ -270,7 +273,7 @@ function initializePage() {
                     // Dividir el texto del input en un arreglo de textos, cada uno sera un nuevo atributo
                     //texts = input.val().toString().split(",");
                     var entidad_id = nodoActual.parentNode.parentNode.getAttribute('id').split("-")[1];
-                    client.publish('/atribute/increase', {
+                    client.publish('/atribute/increase/'+ gon.diagram_id, {
                         entidad_id: entidad_id,
                         atribute_id: nodoActual.getAttribute("id"),
                         texts: input.val().toString(),
@@ -309,12 +312,12 @@ function initializePage() {
                     nodoActual.innerHTML = input.val();
                     var parent = selectedTitle.parent();
                     if (parent.attr('id')){
-                        client.publish('/relation/updateName', {
+                        client.publish('/relation/updateName/'+ gon.diagram_id, {
                             relation_id: parent.attr('id'),
                             text: selectedTitle.attr('text')
                         });
                     }else {
-                        client.publish('/entity/updateTitle', {
+                        client.publish('/entity/updateTitle/'+ gon.diagram_id, {
                             entity_id: parent.parent().attr('id'),
                             text: selectedTitle.attr('text')
                         });
@@ -342,7 +345,7 @@ function initializePage() {
                     // Remover el atributo que quedo vacio
                     //nodoActual.parentNode.removeChild(nodoActual);
                     console.log('eliminar atributo');
-                    client.publish('/atribute/delete', {
+                    client.publish('/atribute/delete/'+ gon.diagram_id, {
                         atribute_id: nodoActual.getAttribute('id'),
                         rect_height:  rectHeight
                     });
@@ -352,7 +355,7 @@ function initializePage() {
                     var text = input.val();
                     addTextListener(nodoActual);
                     console.log('editar atributo');
-                    client.publish('/atribute/updateName', {
+                    client.publish('/atribute/updateName/'+ gon.diagram_id, {
                         atribute_id: nodoActual.getAttribute('id'),
                         text: text
                     });
@@ -415,7 +418,7 @@ function initializePage() {
                         /*$(selectedLine.node).css({
                             markerStart: markerStartString
                         });*/
-                        client.publish('/relation/updateStart', {
+                        client.publish('/relation/updateStart/'+ gon.diagram_id, {
                             relation_id: selectedLine.parent().attr("id"),
                             marker_start: markerStartString
                         });
@@ -451,7 +454,7 @@ function initializePage() {
                         /*$(selectedLine.node).css({
                             markerEnd: markerEndString
                         });*/
-                        client.publish('/relation/updateEnd', {
+                        client.publish('/relation/updateEnd/'+ gon.diagram_id, {
                             relation_id: selectedLine.parent().attr("id"),
                             marker_end: markerEndString
                         });

@@ -15,7 +15,7 @@ class DiagramsController < ApplicationController
   # GET /diagrams/1
   # GET /diagrams/1.json
   def show
-    gon.push({:diagram_image => @diagram.image})
+    gon.push({:diagram_image => @diagram.image, :diagram_id => @diagram.id})
     gon.diagram_entities = @diagram.entities.as_json
     for i in 0...gon.diagram_entities.length
         gon.diagram_entities[i].merge!({'atributes' => @diagram.entities[i].atributes.as_json })

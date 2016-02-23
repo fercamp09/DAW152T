@@ -28,7 +28,7 @@ function addToEntidadesArray(entity){
 
 function endDrag(event){
     var parent = event.target.parentElement.parentElement;
-    client.publish('/entity/move', {
+    client.publish('/entity/move/'+ gon.diagram_id, {
         entity_id: parent.getAttribute('id'),
         transform: parent.getAttribute('transform'),
         dx: event.x,
@@ -67,7 +67,7 @@ function deleteEntity(entity_id) {
 
 function addCloseButtonListener(closeButton){
     closeButton.click( function() {
-        client.publish('/entity/delete', {
+        client.publish('/entity/delete/'+ gon.diagram_id, {
             entity_id: this.parent().parent().attr("id")
         });
         //deleteEntity(this);
@@ -107,7 +107,7 @@ function addLineListeners (relation){
         });
     relation.select(".closeButton").click( function() {
         //deleteRelation(this.parent());
-        client.publish('/relation/delete', {
+        client.publish('/relation/delete/'+ gon.diagram_id, {
             relation_id: this.parent().attr("id")
         });
     });
@@ -326,7 +326,7 @@ function drawRelations(lineHandlers, start){
                 //line.attr({class: "" + idFrom[1] + "-" + id1Pos[1] + "-" + idTo[1] + "-" + id2Pos[1]});
                 var id = "" + idFrom[1] + "-" + id1Pos[1] + "-" + idTo[1] + "-" + id2Pos[1];
                 //var parent = event.target.parentElement.parentElement;
-                client.publish('/relation/create', {
+                client.publish('/relation/create/'+ gon.diagram_id, {
                     relation_class: id,
                     x1: lineVariables[0],
                     y1: lineVariables[1],
