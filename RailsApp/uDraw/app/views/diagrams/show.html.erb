@@ -58,7 +58,7 @@
       <%= form_tag("/share/"+params[:id],remote:true, method: "post") do %>
           <%= label_tag(:q, "Compartir con:", class:'highlight') %>
           <%= text_field_tag(:share_user,nil, id: "share_text_field",:size=> 10) %>
-          <%= submit_tag("Compartir", class:'btn-share') %>
+          <%= submit_tag("Compartir", id:'share-button',class:'btn-share') %>
       <% end %>
     </div>
   </div>

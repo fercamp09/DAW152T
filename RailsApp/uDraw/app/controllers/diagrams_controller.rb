@@ -28,7 +28,7 @@ class DiagramsController < ApplicationController
   # GET /diagrams/new
   def new
     @diagram = Diagram.new
-    gon.push({:global_id => 0})
+    #gon.push({:global_id => 0})
   end
 
   # GET /diagrams/1/edit
@@ -38,12 +38,12 @@ class DiagramsController < ApplicationController
   # POST /diagrams
   # POST /diagrams.json
   def create
-    @diagram = current_user.diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png', global_id: params[:diagram][:global_id]})
-    #Diagram.new(diagram_params)
-    create_diagram
+    #@diagram = current_user.diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png', global_id: params[:diagram][:global_id]})
+    @diagram = current_user.diagrams.create(diagram_params)
+    @diagram.global_id = 0
     respond_to do |format|
       if @diagram.save
-        format.html { redirect_to window_path, notice: 'Diagram was successfully created.' }
+        format.html { redirect_to @diagram, notice: 'Diagram was successfully created.' }
         format.json { render :show, status: :created, location: @diagram, notice: 'Diagram was successfully created.'  }
       else
         format.html { render :new }

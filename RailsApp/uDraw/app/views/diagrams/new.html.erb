@@ -11,56 +11,26 @@
   <%= stylesheet_link_tag "bootstrap-social", media: "all" %>
   <%= stylesheet_link_tag "workstation", media: "all" %>
   <%= stylesheet_link_tag "menu-principal", media: "all" %>
-  <%= javascript_include_tag "snap.svg-min"%>
-  <%= javascript_include_tag "workstation"%>
-  <%= javascript_include_tag "example"%>
-  <%= javascript_include_tag "FileSaver"%>
 </head>
 <%= render 'menu_application' %>
-<%= render 'drawing_area' %>
-<div id="accordion-resizer" class="draggable asideMenu">
-  <div class="contenedor-paletas">
-    <h2>Entidad</h2>
-    <div id="paleta1" class="paleta container-fluid">
+<div class="container-fluid">
 
-    </div>
-    <h2>Relaci&oacute;n</h2>
-    <div id="paleta2" class="paleta container-fluid">
-      <fieldset>
-        <label for="desde">Desde:</label>
-        <select name="filesB" id="desde" class="filesB">
-          <option value="uno" data-class="uno">Uno</option>
-          <option value="muchos" data-class="muchos">Muchos</option>
-          <option value="uno-solo-uno" data-class="uno-solo-uno">Uno (y solo uno)</option>
-          <option value="cero-uno" data-class="cero-uno">Cero o uno</option>
-          <option value="uno-muchos" data-class="uno-muchos">Uno o muchos</option>
-          <option value="cero-muchos" data-class="cero-muchos">Cero o muchos</option>
-        </select>
-      </fieldset>
-      <fieldset>
-        <label for="hasta">Hasta:</label>
-        <select name="filesB" id="hasta" class="filesB">
-          <option value="uno" data-class="uno">Uno</option>
-          <option value="muchos" data-class="muchos">Muchos</option>
-          <option value="uno-solo-uno" data-class="uno-solo-uno">Uno (y solo uno)</option>
-          <option value="cero-uno" data-class="cero-uno">Cero o uno</option>
-          <option value="uno-muchos" data-class="uno-muchos">Uno o muchos</option>
-          <option value="cero-muchos" data-class="cero-muchos">Cero o muchos</option>
-        </select>
-      </fieldset>
-    </div>
-    <h2>Compartir:</h2>
-    <div class="container-fluid">
-      <span class='st_facebook' displayText='Facebook'></span>
-      <span class='st_twitter' displayText='Tweet'></span>
-      <span class='st_' displayText=''></span>
-      <span class='st_googleplus' displayText='Google +'></span>
-      <%= form_tag("/share/"+String(@diagrams_id),remote:true, method: "post") do %>
-          <%= label_tag(:q, "Compartir con:", class:'highlight') %>
-          <%= text_field_tag(:share_user,nil, id: "share_text_field", :size=> 10) %>
-          <%= submit_tag("Compartir", class:'btn-share')%>
-      <% end %>
-    </div>
+<%= form_for @diagram do |f| %>
+    <% if @diagram.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@diagram.errors.count, "error") %> prohibited this diagram from being saved:</h2>
+
+          <ul>
+            <% @diagram.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :name, "Nombre del Diagrama:" %>
+      <%= f.text_field :name %><br>
+    </div><br>
+    <%= f.submit "Crear Diagrama", id:"crear-Button", class: "btn btn-primary"%>
+<% end %>
   </div>
-  <%= render "modal"%>
-</div>
