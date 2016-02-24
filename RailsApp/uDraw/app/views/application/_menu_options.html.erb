@@ -9,12 +9,13 @@
           <li><a href="#" onclick="encode_as_img_and_link();">Exportar a svg</a></li>
           <li><a href=<%= window_url %>>Cerrar</a></li>
         </ul>
-    </li>
     <%else%>
         <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
           <%= link_to 'Crear nuevo modelo', new_diagram_path, method: :get ,class: 'btn btn-default navbar-btn' %>
         </div>
     <%end%>
+    </li>
+
   </ul>
   <%= render 'menu_user' %>
 </div>

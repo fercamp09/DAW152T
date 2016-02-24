@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag "menu-principal", media: "all" %>
   <%= javascript_include_tag "window" %>
   <%= javascript_include_tag "FileSaver"%>
+  <%= Gon::Base.render_data %>
 </head>
 <%= render 'menu_application' %>
 <div class="container">
