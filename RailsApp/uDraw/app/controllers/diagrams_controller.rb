@@ -41,6 +41,7 @@ class DiagramsController < ApplicationController
     #@diagram = current_user.diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png', global_id: params[:diagram][:global_id]})
     @diagram = current_user.diagrams.create(diagram_params)
     @diagram.global_id = 0
+    @diagram.image = @diagram.name + '.png'
     respond_to do |format|
       if @diagram.save
         format.html { redirect_to @diagram, notice: 'Diagram was successfully created.' }

@@ -15,7 +15,7 @@
 <%= render 'menu_application' %>
 <div class="container-fluid">
 
-<%= form_for @diagram do |f| %>
+<%= form_for @diagram, class:'center-block' do |f| %>
     <% if @diagram.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@diagram.errors.count, "error") %> prohibited this diagram from being saved:</h2>
