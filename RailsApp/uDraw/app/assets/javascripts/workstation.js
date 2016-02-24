@@ -80,7 +80,7 @@ function saveDiagram(){
     }
 
     relations = s.selectAll('.relation');
-    for (var i = 0; i < relations.length; i++) {
+    for (i = 0; i < relations.length; i++) {
         var line = relations[i].select('line');
         var styles = line.attr('style').toString().split(';');
         var relation = {
@@ -98,6 +98,8 @@ function saveDiagram(){
     }
     $('#imagen-svg-entities').val(JSON.stringify(diagram_entities));
     $('#imagen-svg-relations').val(JSON.stringify(diagram_relations));
+    $('#form-global-id').val(globalID.toString());
+    console.log(globalID);
 }
 
 $(function() {
@@ -580,7 +582,7 @@ function recreateEntity(entity_data){
     addTextListeners(title);
     drawRelations(entity.selectAll(".line-handlers circle"), start);
 
-    incrementID();
+    //incrementID();
     return entity;
 }
 

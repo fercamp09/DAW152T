@@ -17,7 +17,7 @@ class DiagramsController < ApplicationController
   # GET /diagrams/1
   # GET /diagrams/1.json
   def show
-    gon.push({:diagram_image => @diagram.image, :diagram_id => @diagram.id})
+    gon.push({:diagram_image => @diagram.image, :diagram_id => @diagram.id, :global_id => @diagram.global_id})
     gon.diagram_entities = @diagram.entities.as_json
     for i in 0...gon.diagram_entities.length
         gon.diagram_entities[i].merge!({'atributes' => @diagram.entities[i].atributes.as_json })
@@ -28,6 +28,7 @@ class DiagramsController < ApplicationController
   # GET /diagrams/new
   def new
     @diagram = Diagram.new
+    gon.push({:global_id => 0})
   end
 
   # GET /diagrams/1/edit
@@ -37,7 +38,7 @@ class DiagramsController < ApplicationController
   # POST /diagrams
   # POST /diagrams.json
   def create
-    @diagram = current_user.diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png'})
+    @diagram = current_user.diagrams.create({name: params[:diagram][:name], image: params[:diagram][:name]+'.png', global_id: params[:diagram][:global_id]})
     #Diagram.new(diagram_params)
     create_diagram
     respond_to do |format|
@@ -61,7 +62,7 @@ class DiagramsController < ApplicationController
     #ent = @diagram.entities.update(@diagram.entities.ids, entities)
     #diag = @diagram.relations.update(@diagram.relations.ids, relations_hash)
     respond_to do |format|
-      if 1
+      if @diagram.update(diagram_params)
         format.html { redirect_to @diagram, notice: 'Diagram was successfully updated.' }
         format.json { render :show, status: :ok, location: @diagram }
       else
@@ -97,7 +98,7 @@ class DiagramsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def diagram_params
     params.permit(:diagram_entities, :diagram_relations)
-    params.require(:diagram).permit(:name,:entities, :relations)
+    params.require(:diagram).permit(:name, :global_id)
   end
 
   def set_diagrams_id
