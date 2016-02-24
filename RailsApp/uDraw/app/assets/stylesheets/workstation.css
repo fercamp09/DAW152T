@@ -117,12 +117,12 @@ body {
 }
 
 #chat{
-    position: fixed;
-    top: 325px;
-    left: 1150px;
-    width: 200px;
+    position: absolute;
+    top: 250px;
+    left: 1200px;
+    width: 300px;
     overflow-y: scroll;
-    height: 350px;
+    height: 450px;
     background-color: #ffffff;
 }
 
@@ -132,3 +132,4 @@ body {
     left: 1200px;
     width: 200px;
 }
+

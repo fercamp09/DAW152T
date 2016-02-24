@@ -12,7 +12,7 @@ jQuery ->
 
   client.subscribe '/comments', (payload) ->
     console.log(payload)
-    $('#chat').append(payload.message) if payload.message
+    $('#messages').append(payload.message) if payload.message
 
   try
     client.unsubscribe '/entity/create/'+ gon.diagram_id

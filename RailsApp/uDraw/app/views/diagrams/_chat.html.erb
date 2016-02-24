@@ -2,6 +2,8 @@
   <li class="list-group-item disabled">
     Chat
   </li>
+  <div id="messages">
+    <%= render @diagram.comments %>
+  </div>
   <%= render 'comments/form'%>
-  <%= render @diagram.comments %>
 </ul>
