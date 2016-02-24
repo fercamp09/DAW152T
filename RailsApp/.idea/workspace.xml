@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ad52b8-fc6c-4f71-91e0-c2a0d645cd8b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_first_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_gap.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_last_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_next_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_page.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_paginator.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/kaminari/_prev_page.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/comments/_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/create.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/views/comments/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/.byebug_history" afterPath="$PROJECT_DIR$/uDraw/.byebug_history" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/models/diagram.rb" afterPath="$PROJECT_DIR$/uDraw/app/models/diagram.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" afterPath="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/config/routes.rb" afterPath="$PROJECT_DIR$/uDraw/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/db/schema.rb" afterPath="$PROJECT_DIR$/uDraw/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" afterPath="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" />
     </list>
     <ignored path="uDraw.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,6 +54,24 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - uDraw_development@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="udraw_development" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="comments" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -51,31 +79,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="window.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/window.html.erb">
+      <file leaf-file-name="_chat.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.923077">
-              <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+            <state vertical-scroll-proportion="-3.2075472">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/index.html.erb">
+      <file leaf-file-name="_comment.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3846154">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/application_controller.rb">
+      <file leaf-file-name="diagrams.coffee" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35643566">
-              <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.68878716">
+              <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="diagrams_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comments_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/comments_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.js.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -101,17 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uDraw/public/example.svg" />
-        <option value="$PROJECT_DIR$/uDraw/public/resources/xml/panel.xml" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/application/login.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/config/initializers/assets.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/session/new.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/config/routes.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/window.js" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/application/workstation.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/config/database.yml" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_login.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/db/migrate/20160124221914_add_column_shared_to_diagrams_users.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_header.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/estilo-principal.css" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/estilo-window.css" />
@@ -124,20 +171,16 @@
         <option value="$PROJECT_DIR$/uDraw/app/models/entity.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/share.js.erb" />
         <option value="$PROJECT_DIR$/uDraw/config/application.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/uDraw/db/migrate/20160220013128_add_role_column_to_users.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_user.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/models/diagram.rb" />
         <option value="$PROJECT_DIR$/uDraw/db/migrate/20160220153922_add_svg_id_column_to_atributes_and_relations.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_modal.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/not_found.html" />
         <option value="$PROJECT_DIR$/uDraw/db/schema.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/session_controller.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/new.html.erb" />
@@ -145,13 +188,28 @@
         <option value="$PROJECT_DIR$/uDraw/app/views/application/index.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/Gemfile" />
         <option value="$PROJECT_DIR$/uDraw/app/views/users/index.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/index.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/kaminari/_paginator.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/models/diagrams_user.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/window.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/application/_chat.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" />
+        <option value="$PROJECT_DIR$/uDraw/app/models/diagram.rb" />
+        <option value="$PROJECT_DIR$/uDraw/config/routes.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/models/comment.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/comments/new.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/comments/_form.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/comments.coffee" />
+        <option value="$PROJECT_DIR$/uDraw/app/controllers/comments_controller.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb" />
       </list>
     </option>
   </component>
@@ -164,8 +222,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="738" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -253,6 +313,54 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diagrams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RailsApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RailsApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -267,17 +375,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ecotel\DAW152T\RailsApp\uDraw\app\views\diagrams" />
+      <recent name="C:\Users\Ecotel\DAW152T\RailsApp\uDraw\app\views\comments" />
       <recent name="C:\Users\Ecotel\DAW152T\RailsApp\uDraw\app\views\application" />
       <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\public\resources\paleta" />
       <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\app\assets\images" />
-      <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\app\assets\xml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ecotel\DAW152T\RailsApp\uDraw\app\views\diagrams" />
       <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\public\resources" />
       <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\public" />
       <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\app\assets\javascripts" />
       <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\app\views\layouts" />
-      <recent name="C:\Users\Ecotel\RubymineProjects\uDraw.io\uDraw\app\views\application" />
     </key>
   </component>
   <component name="RunManager">
@@ -542,7 +650,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456332321469</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Paginacion con bootstrap">
+      <created>1456333199759</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1456333199759</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
@@ -555,21 +669,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="738" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.296063" sideWeight="0.48009187" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2857143" sideWeight="0.48009187" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14701378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17246597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17457886" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31968504" sideWeight="0.52756506" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31968504" sideWeight="0.4724349" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.52756506" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.4724349" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -643,102 +757,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/uDraw/app/models/entity.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03926097">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/models/relation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07852194">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/images/example.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11778291">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..entities">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/share.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/share.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12530713">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76443416">
-          <caret line="26" column="79" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/db/migrate/20160217003155_add_global_id_to_diagram_and_name_to_relation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11778291">
-          <caret line="3" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/omniauth_callbacks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_menu_user.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="171" selection-start-line="3" selection-start-column="171" selection-end-line="3" selection-end-column="171" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_menu_header.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/models/atribute.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07852194">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/db/migrate/20160220153922_add_svg_id_column_to_atributes_and_relations.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11778291">
@@ -864,14 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0724876">
-          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -880,26 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/session_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4398682">
-          <caret line="16" column="66" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/login.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55593807">
           <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6281755">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -971,14 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.769231">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="32" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13513513">
@@ -1000,26 +986,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.37592137">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
           <caret line="82" column="56" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72517323">
-          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1044,22 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31408775">
           <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5103926">
-          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/models/diagram.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07852194">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1109,10 +1063,183 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75396824">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/db/migrate/20160224180414_create_comments.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/models/diagram.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28674698">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35643566">
-          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+        <state vertical-scroll-proportion="3.0732265">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3625304">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/models/comment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11670481">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/session_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6224256">
+          <caret line="16" column="66" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41647598">
+          <caret line="122" column="17" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38901603">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..comments">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08272506">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58352405">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6086956">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/comments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2075472">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/comments.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11670481">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68878716">
+          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
           <folding />
         </state>
       </provider>

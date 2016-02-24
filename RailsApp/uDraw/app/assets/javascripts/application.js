@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require faye
+//= require comments
 //= require diagrams
 //= require turbolinks
 

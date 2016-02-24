@@ -17,6 +17,8 @@ class DiagramsController < ApplicationController
   # GET /diagrams/1
   # GET /diagrams/1.json
   def show
+    @comment = Comment.new
+    @comments = Comment.order('created_at DESC')
     gon.push({:diagram_image => @diagram.image, :diagram_id => @diagram.id, :global_id => @diagram.global_id})
     gon.diagram_entities = @diagram.entities.as_json
     for i in 0...gon.diagram_entities.length

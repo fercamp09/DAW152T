@@ -1,0 +1,10 @@
+<%= form_for @comment, remote: true do |f| %>
+    <div class="form-group">
+      <%= f.label :body, 'Enter your message:' %>
+      <%= f.text_field :body, rows: 3, class: 'form-control', required: true, maxlength: 2000 %>
+      <%= f.text_field :diagram_id,  :value => @diagram.id, hidden: true %>
+      <%= f.text_field :user_name,  :value => current_user.name, hidden: true %>
+      <small class="label label-warning">Cannot be blank or contain more than 2000 symbols.</small>
+    </div>
+    <%= f.submit 'Post', class: 'btn btn-primary' %>
+<% end %>

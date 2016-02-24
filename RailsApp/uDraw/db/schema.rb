@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220153922) do
+ActiveRecord::Schema.define(version: 20160224180414) do
 
   create_table "atributes", force: :cascade do |t|
     t.string   "info",           limit: 255
@@ -26,11 +26,21 @@ ActiveRecord::Schema.define(version: 20160220153922) do
 
   add_index "atributes", ["entity_id"], name: "index_atributes_on_entity_id", using: :btree
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",       limit: 65535
+    t.string   "user_name",  limit: 255
+    t.integer  "diagram_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "comments", ["diagram_id"], name: "index_comments_on_diagram_id", using: :btree
+
   create_table "diagrams", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "image",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "global_id",  limit: 4
   end
 
@@ -97,6 +107,7 @@ ActiveRecord::Schema.define(version: 20160220153922) do
   end
 
   add_foreign_key "atributes", "entities"
+  add_foreign_key "comments", "diagrams"
   add_foreign_key "entities", "diagrams"
   add_foreign_key "identities", "users"
   add_foreign_key "relations", "diagrams"

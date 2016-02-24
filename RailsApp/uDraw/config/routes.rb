@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'diagram/create'
 
   delete 'diagram/destroy'
-
+  resources :comments, only: [:new, :create]
   get 'login' => 'application#login'
   get 'index' => 'application#index'
   get 'window' => 'application#window'
