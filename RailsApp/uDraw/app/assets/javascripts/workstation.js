@@ -19,6 +19,13 @@ $(document).ready(
         $(".btn-share").click(function() {
             $( ".highlight" ).effect( "highlight" );
         });
+        $( "#mensaje-guardado" ).hide( "highlight" );
+        $("#close-save-button").click(function() {
+            $( "#mensaje-guardado" ).hide( "highlight" );
+        });
+        $("#guardar-Button").click(function() {
+            $( "#mensaje-guardado" ).show( "highlight" );
+        });
     });
 
 

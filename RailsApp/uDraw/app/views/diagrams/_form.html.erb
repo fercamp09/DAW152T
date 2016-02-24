@@ -29,8 +29,8 @@
       <%= text_area_tag(:diagram_relations,"Relations", size: "24x6", id: 'imagen-svg-relations') %><br>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-
-      <%= f.submit "Guardar", id:"GuardarButton", class: "btn btn-primary", data_Dismiss: "modal"%>
+      <p id="mensaje-guardado" class="text-success">Diagrama Guardado</p>
+      <button id="close-save-button" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      <%= f.submit "Guardar", id:"guardar-Button", class: "btn btn-primary"%>
     </div>
 <% end %>

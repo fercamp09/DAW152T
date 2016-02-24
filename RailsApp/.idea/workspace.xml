@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39ad52b8-fc6c-4f71-91e0-c2a0d645cd8b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" afterPath="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/diagrams/_modal.html.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/_modal.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/application/not_found.html" afterPath="$PROJECT_DIR$/uDraw/app/views/application/not_found.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
     </list>
@@ -41,24 +42,6 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - uDraw_development@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="udraw_development" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="atributes" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -66,19 +49,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="workstation.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workstation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7586207">
-              <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+            <state vertical-scroll-proportion="1.117647">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#saveDiagram#0" expanded="false" />
+                <element signature="e#3506#3701#0" expanded="false" />
                 <element signature="n#!!block;n#changeTitle#0" expanded="false" />
                 <element signature="n#!!block;n#cloneMouseup#0" expanded="false" />
                 <element signature="n#!!block;n#loadThumbnails#0" expanded="false" />
                 <element signature="n#!!block;n#addTextListener#0" expanded="false" />
                 <element signature="n#!!block;n#increaseAtributes#0" expanded="false" />
                 <element signature="n#!!block;n#initializePage#0" expanded="false" />
+                <element signature="n#!!block;n#encode_as_img_and_link#0" expanded="false" />
                 <element signature="n#!!block;n#saveSVG#0" expanded="false" />
                 <element signature="n#!!block;n#showSVG#0" expanded="false" />
                 <element signature="n#!!block;n#recreateEntity#0" expanded="false" />
@@ -102,11 +86,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="_menu_options.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.115385">
+              <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="example.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.103448">
-              <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+            <state vertical-scroll-proportion="-14.068966">
+              <caret line="120" column="32" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
               <folding>
                 <element signature="n#!!block;n#incrementID#0" expanded="false" />
                 <element signature="n#!!block;n#addToEntidadesArray#0" expanded="false" />
@@ -116,9 +120,10 @@
                 <element signature="n#!!block;n#addCloseButtonListener#0" expanded="false" />
                 <element signature="n#!!block;n#addLineListeners#0" expanded="false" />
                 <element signature="n#!!block;n#deleteRelation#0" expanded="false" />
+                <element signature="n#!!block;n#addTextListeners#0" expanded="false" />
                 <element signature="n#!!block;n#joinRelations#0" expanded="false" />
                 <element signature="n#!!block;n#chooseSide#0" expanded="false" />
-                <element signature="e#5458#5802#0" expanded="false" />
+                <element signature="e#5473#5817#0" expanded="false" />
                 <element signature="n#!!block;n#updateLines#0" expanded="false" />
                 <element signature="n#!!block;n#loadXML#0" expanded="false" />
                 <element signature="n#!!block;n#eliminarRelaciones#0" expanded="false" />
@@ -133,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diagrams.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="diagrams.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.17757">
-              <caret line="80" column="44" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -148,9 +153,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#3421#4207#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,8 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uDraw/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/xml/recent.xml" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/xml/shared.xml" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/xml/panel.xml" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/login.css" />
@@ -213,7 +214,6 @@
         <option value="$PROJECT_DIR$/uDraw/db/migrate/20160124221914_add_column_shared_to_diagrams_users.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/models/diagrams_user.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_header.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/estilo-principal.css" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/estilo-window.css" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/index.html.erb" />
@@ -226,9 +226,7 @@
         <option value="$PROJECT_DIR$/uDraw/db/schema.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/models/entity.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/window.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/new.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/share.js.erb" />
         <option value="$PROJECT_DIR$/uDraw/config/application.rb" />
         <option value="$PROJECT_DIR$/uDraw/Gemfile" />
@@ -242,10 +240,15 @@
         <option value="$PROJECT_DIR$/uDraw/db/migrate/20160220153922_add_svg_id_column_to_atributes_and_relations.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/session_controller.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" />
+        <option value="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_modal.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/application/not_found.html" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/new.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
       </list>
     </option>
   </component>
@@ -325,6 +328,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -344,7 +351,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RailsApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RailsApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -564,7 +615,25 @@
       <option name="project" value="LOCAL" />
       <updated>1456238617176</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Canales divididos por diagrama">
+      <created>1456247802458</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1456247802458</updated>
+    </task>
+    <task id="LOCAL-00013" summary="El input copia la informacion del texto">
+      <created>1456254633808</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1456254633808</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Validar acceso a diagramas existentes">
+      <created>1456260118739</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1456260118739</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -581,17 +650,17 @@
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27401575" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27401575" sideWeight="0.49081165" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16003063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17228177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17228177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.51225114" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28188977" sideWeight="0.48774886" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.5245023" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.4754977" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -603,14 +672,14 @@
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27401575" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27401575" sideWeight="0.49081165" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32810047" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16003063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31490016" sideWeight="0.5030257" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28188977" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.5245023" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.4754977" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -644,7 +713,10 @@
     <MESSAGE value="Colocado el arreglo del enter, de un commit de Leonardo" />
     <MESSAGE value="Edicion de texto del atributo" />
     <MESSAGE value="Realtime en los atributos (eliminar, agregar, editar)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realtime en los atributos (eliminar, agregar, editar)" />
+    <MESSAGE value="Canales divididos por diagrama" />
+    <MESSAGE value="El input copia la informacion del texto" />
+    <MESSAGE value="Validar acceso a diagramas existentes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validar acceso a diagramas existentes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -653,76 +725,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_drawing_area.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.302799">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/db/migrate/20160116025405_create_diagrams.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="5" selection-start-line="1" selection-start-column="2" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/c01723a6-e4c2-45b0-8563-21db2f37c8ac.schema:udraw_development">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>c01723a6-e4c2-45b0-8563-21db2f37c8ac.schema:udraw_development</OriginalElement>
-          <nodes>
-            <node x="0.0" y="851.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.schema_migrations</node>
-            <node x="197.5" y="0.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.diagrams</node>
-            <node x="555.0" y="278.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.identities</node>
-            <node x="180.0" y="512.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.relations</node>
-            <node x="810.0" y="0.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.diagrams_users</node>
-            <node x="525.0" y="0.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.users</node>
-            <node x="10.0" y="190.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.entities</node>
-            <node x="0.0" y="589.0">c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.attributes</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.relations" target="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.diagrams">
-              <point x="75.0" y="-147.0" />
-              <point x="405.0" y="165.0" />
-              <point x="317.5" y="165.0" />
-              <point x="40.0" y="70.0" />
-            </edge>
-            <edge source="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.attributes" target="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.entities">
-              <point x="0.0" y="-70.0" />
-              <point x="-70.0" y="136.0" />
-            </edge>
-            <edge source="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.entities" target="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.diagrams">
-              <point x="0.0" y="-136.0" />
-              <point x="150.0" y="165.0" />
-              <point x="237.5" y="165.0" />
-              <point x="-40.0" y="70.0" />
-            </edge>
-            <edge source="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.identities" target="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.users">
-              <point x="0.0" y="-81.0" />
-              <point x="0.0" y="114.0" />
-            </edge>
-            <edge source="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.relations" target="c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.entities">
-              <point x="-75.0" y="-147.0" />
-              <point x="255.0" y="487.0" />
-              <point x="220.0" y="487.0" />
-              <point x="70.0" y="136.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.4240780911062907" x="106.0" y="556.0" />
-          <SelectedNodes>
-            <node>c01723a6-e4c2-45b0-8563-21db2f37c8ac.table:udraw_development.schema_migrations</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/db/migrate/20160216230712_create_diagram_tables.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -751,18 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..diagrams_users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/c01723a6-e4c2-45b0-8563-21db2f37c8ac">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -787,20 +777,6 @@
             <Category>Key columns</Category>
           </Categories>
           <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_modal.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33415234">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -832,18 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..identities">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/assets/images/example.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11778291">
@@ -852,25 +816,6 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..entities">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..diagrams">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -924,13 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1056511">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.99017197">
@@ -980,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/models/diagrams_user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11778291">
@@ -1008,20 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/models/diagram.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23556583">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/window.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/db/migrate/20160220013128_add_role_column_to_users.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07852194">
@@ -1033,29 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5881384">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/session_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,18 +979,208 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039719626">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/window.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33830845">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/models/diagram.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23556583">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47113165">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/session_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.068966">
+          <caret line="120" column="32" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!block;n#incrementID#0" expanded="false" />
+            <element signature="n#!!block;n#addToEntidadesArray#0" expanded="false" />
+            <element signature="n#!!block;n#endDrag#0" expanded="false" />
+            <element signature="n#!!block;n#addEntityListener#0" expanded="false" />
+            <element signature="n#!!block;n#deleteEntity#0" expanded="false" />
+            <element signature="n#!!block;n#addCloseButtonListener#0" expanded="false" />
+            <element signature="n#!!block;n#addLineListeners#0" expanded="false" />
+            <element signature="n#!!block;n#deleteRelation#0" expanded="false" />
+            <element signature="n#!!block;n#addTextListeners#0" expanded="false" />
+            <element signature="n#!!block;n#joinRelations#0" expanded="false" />
+            <element signature="n#!!block;n#chooseSide#0" expanded="false" />
+            <element signature="e#5473#5817#0" expanded="false" />
+            <element signature="n#!!block;n#updateLines#0" expanded="false" />
+            <element signature="n#!!block;n#loadXML#0" expanded="false" />
+            <element signature="n#!!block;n#eliminarRelaciones#0" expanded="false" />
+            <element signature="n#!!block;n#drawRelations#0" expanded="false" />
+            <element signature="n#!!block;n#loadEntity#0" expanded="false" />
+            <element signature="n#!!block;n#start#0" expanded="false" />
+            <element signature="n#!!block;n#loadSVG#0" expanded="false" />
+            <element signature="n#!!block;n#recreateRelation#0" expanded="false" />
+            <element signature="n#!!block;n#loadDocument#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..diagrams_users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..diagrams">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..identities">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_drawing_area.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8433735">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5851979">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/not_found.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46815833">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_modal.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23407917">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38554215">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/application/_menu_options.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.115385">
+          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7586207">
-          <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+        <state vertical-scroll-proportion="1.117647">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#saveDiagram#0" expanded="false" />
+            <element signature="e#3506#3701#0" expanded="false" />
             <element signature="n#!!block;n#changeTitle#0" expanded="false" />
             <element signature="n#!!block;n#cloneMouseup#0" expanded="false" />
             <element signature="n#!!block;n#loadThumbnails#0" expanded="false" />
             <element signature="n#!!block;n#addTextListener#0" expanded="false" />
             <element signature="n#!!block;n#increaseAtributes#0" expanded="false" />
             <element signature="n#!!block;n#initializePage#0" expanded="false" />
+            <element signature="n#!!block;n#encode_as_img_and_link#0" expanded="false" />
             <element signature="n#!!block;n#saveSVG#0" expanded="false" />
             <element signature="n#!!block;n#showSVG#0" expanded="false" />
             <element signature="n#!!block;n#recreateEntity#0" expanded="false" />
@@ -1116,53 +1200,6 @@
             <element signature="n#!!block;n#updateAtributeName#0" expanded="false" />
             <element signature="n#!!block;n#deleteAtribute#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.103448">
-          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!block;n#incrementID#0" expanded="false" />
-            <element signature="n#!!block;n#addToEntidadesArray#0" expanded="false" />
-            <element signature="n#!!block;n#endDrag#0" expanded="false" />
-            <element signature="n#!!block;n#addEntityListener#0" expanded="false" />
-            <element signature="n#!!block;n#deleteEntity#0" expanded="false" />
-            <element signature="n#!!block;n#addCloseButtonListener#0" expanded="false" />
-            <element signature="n#!!block;n#addLineListeners#0" expanded="false" />
-            <element signature="n#!!block;n#deleteRelation#0" expanded="false" />
-            <element signature="n#!!block;n#joinRelations#0" expanded="false" />
-            <element signature="n#!!block;n#chooseSide#0" expanded="false" />
-            <element signature="e#5458#5802#0" expanded="false" />
-            <element signature="n#!!block;n#updateLines#0" expanded="false" />
-            <element signature="n#!!block;n#loadXML#0" expanded="false" />
-            <element signature="n#!!block;n#eliminarRelaciones#0" expanded="false" />
-            <element signature="n#!!block;n#drawRelations#0" expanded="false" />
-            <element signature="n#!!block;n#loadEntity#0" expanded="false" />
-            <element signature="n#!!block;n#start#0" expanded="false" />
-            <element signature="n#!!block;n#loadSVG#0" expanded="false" />
-            <element signature="n#!!block;n#recreateRelation#0" expanded="false" />
-            <element signature="n#!!block;n#loadDocument#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3421#4207#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.17757">
-          <caret line="80" column="44" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
