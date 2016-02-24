@@ -40,3 +40,4 @@
 <br>
 
 <%= link_to 'New Diagram', new_diagram_path, class:'btn btn-primary' %>
+<p ><%= paginate @diagrams, :remote => true  %></p>

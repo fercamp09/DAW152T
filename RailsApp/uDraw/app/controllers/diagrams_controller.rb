@@ -11,7 +11,7 @@ class DiagramsController < ApplicationController
   # GET /diagrams
   # GET /diagrams.json
   def index
-    @diagrams = Diagram.all
+    @diagrams = Diagram.page(params[:page]).per(10)
   end
 
   # GET /diagrams/1
