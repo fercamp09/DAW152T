@@ -80,14 +80,14 @@ header h4 {
 
 .thumbnail-hover:hover {
     position:relative;
-    top:-25px;
+    top:-5px;
     height:auto;
     display:block;
     z-index:999;
 }
 .thumbnail-hover:hover  div:first-of-type {
 	background-color: #8edf2f;
-}
+    color: white;}
 
 img {
    height: 240px;
