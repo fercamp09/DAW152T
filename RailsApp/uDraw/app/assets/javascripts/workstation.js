@@ -192,7 +192,8 @@ function loadThumbnails(e) {
 function addTextListener (text){
     text.ondblclick = (function (event) {
         var input = $("#modificadorTexto");
-        input.val(this.textContent);
+        //input.val(this.textContent);
+        input.val("");
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
         input.css("left", "" + event.target.parentNode.getBoundingClientRect().left + "px");
