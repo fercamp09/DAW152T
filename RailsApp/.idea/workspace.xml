@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39ad52b8-fc6c-4f71-91e0-c2a0d645cd8b" name="Default" comment="GlobalID guardado en la tabla Diagrama">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/Gemfile.lock" afterPath="$PROJECT_DIR$/uDraw/Gemfile.lock" />
+    <list default="true" id="39ad52b8-fc6c-4f71-91e0-c2a0d645cd8b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" afterPath="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/db/schema.rb" afterPath="$PROJECT_DIR$/uDraw/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/db/seeds.rb" afterPath="$PROJECT_DIR$/uDraw/db/seeds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
     </list>
@@ -69,27 +64,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="workstation.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workstation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.827586">
-              <caret line="670" column="0" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7574257">
+              <caret line="718" column="52" selection-start-line="718" selection-start-column="52" selection-end-line="718" selection-end-column="52" />
               <folding>
                 <element signature="e#108#843#0" expanded="false" />
                 <element signature="e#1391#1504#0" expanded="false" />
+                <element signature="n#!!block;n#saveDiagram#0" expanded="false" />
                 <element signature="e#3580#3775#0" expanded="false" />
+                <element signature="n#!!block;n#changeTitle#0" expanded="false" />
                 <element signature="n#!!block;n#cloneMouseup#0" expanded="false" />
                 <element signature="n#!!block;n#loadThumbnails#0" expanded="false" />
                 <element signature="n#!!block;n#addTextListener#0" expanded="false" />
+                <element signature="n#!!block;n#increaseAtributes#0" expanded="false" />
                 <element signature="n#!!block;n#initializePage#0" expanded="false" />
                 <element signature="n#!!block;n#encode_as_img_and_link#0" expanded="false" />
                 <element signature="n#!!block;n#saveSVG#0" expanded="false" />
                 <element signature="n#!!block;n#showSVG#0" expanded="false" />
+                <element signature="n#!!block;n#recreateEntity#0" expanded="false" />
                 <element signature="n#!!block;n#createEntity#0" expanded="false" />
-                <element signature="n#!!block;n#moveEntity#0" expanded="false" />
                 <element signature="n#!!block;n#adjustText#0" expanded="false" />
                 <element signature="n#!!block;n#moveEntityRelations#0" expanded="false" />
-                <element signature="n#!!block;n#moveRelation#0" expanded="false" />
                 <element signature="n#!!block;n#updateTitle#0" expanded="false" />
                 <element signature="n#!!block;n#createRelation#0" expanded="false" />
                 <element signature="n#!!block;n#deleteRelationByID#0" expanded="false" />
@@ -105,49 +102,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diagrams_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="diagrams_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4896074">
-              <caret line="100" column="43" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
               <folding>
                 <element signature="e#1250#1888#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="udraw_development.diagrams" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/b3270595/c01723a6-e4c2-45b0-8563-21db2f37c8ac/udraw_development..diagrams">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diagrams.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,16 +118,14 @@
         <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+              <caret line="131" column="7" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
               <folding>
                 <element signature="n#!!block;n#addToEntidadesArray#0" expanded="false" />
                 <element signature="n#!!block;n#endDrag#0" expanded="false" />
                 <element signature="n#!!block;n#addEntityListener#0" expanded="false" />
-                <element signature="n#!!block;n#deleteEntity#0" expanded="false" />
                 <element signature="n#!!block;n#addCloseButtonListener#0" expanded="false" />
                 <element signature="n#!!block;n#addLineListeners#0" expanded="false" />
                 <element signature="n#!!block;n#deleteRelation#0" expanded="false" />
-                <element signature="n#!!block;n#addTextListeners#0" expanded="false" />
                 <element signature="n#!!block;n#joinRelations#0" expanded="false" />
                 <element signature="n#!!block;n#chooseSide#0" expanded="false" />
                 <element signature="e#5497#5841#0" expanded="false" />
@@ -182,21 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uDraw/db/schema.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -280,9 +230,9 @@
         <option value="$PROJECT_DIR$/uDraw/db/schema.rb" />
         <option value="$PROJECT_DIR$/uDraw/db/seeds.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js" />
       </list>
     </option>
   </component>
@@ -403,7 +353,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -426,6 +376,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -669,7 +623,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456272042296</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Arreglos en el GlobalID">
+      <created>1456276988980</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1456276988980</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -683,10 +643,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="738" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27401575" sideWeight="0.49081165" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27401575" sideWeight="0.49081165" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15084226" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -753,11 +713,13 @@
     <MESSAGE value="El input copia la informacion del texto" />
     <MESSAGE value="Validar acceso a diagramas existentes" />
     <MESSAGE value="Mensaje al guardar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mensaje al guardar" />
+    <MESSAGE value="Arreglos en el GlobalID" />
+    <MESSAGE value="Debugging al desplazar entidades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging al desplazar entidades" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1116,62 +1078,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!block;n#addToEntidadesArray#0" expanded="false" />
-            <element signature="n#!!block;n#endDrag#0" expanded="false" />
-            <element signature="n#!!block;n#addEntityListener#0" expanded="false" />
-            <element signature="n#!!block;n#deleteEntity#0" expanded="false" />
-            <element signature="n#!!block;n#addCloseButtonListener#0" expanded="false" />
-            <element signature="n#!!block;n#addLineListeners#0" expanded="false" />
-            <element signature="n#!!block;n#deleteRelation#0" expanded="false" />
-            <element signature="n#!!block;n#addTextListeners#0" expanded="false" />
-            <element signature="n#!!block;n#joinRelations#0" expanded="false" />
-            <element signature="n#!!block;n#chooseSide#0" expanded="false" />
-            <element signature="e#5497#5841#0" expanded="false" />
-            <element signature="n#!!block;n#updateLines#0" expanded="false" />
-            <element signature="n#!!block;n#loadXML#0" expanded="false" />
-            <element signature="n#!!block;n#eliminarRelaciones#0" expanded="false" />
-            <element signature="n#!!block;n#drawRelations#0" expanded="false" />
-            <element signature="n#!!block;n#loadEntity#0" expanded="false" />
-            <element signature="n#!!block;n#start#0" expanded="false" />
-            <element signature="n#!!block;n#loadSVG#0" expanded="false" />
-            <element signature="n#!!block;n#recreateRelation#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1189,26 +1099,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08415841">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding>
+            <element signature="e#1250#1888#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06188119">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/example.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="7" selection-start-line="131" selection-start-column="7" selection-end-line="131" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!block;n#addToEntidadesArray#0" expanded="false" />
+            <element signature="n#!!block;n#endDrag#0" expanded="false" />
+            <element signature="n#!!block;n#addEntityListener#0" expanded="false" />
+            <element signature="n#!!block;n#addCloseButtonListener#0" expanded="false" />
+            <element signature="n#!!block;n#addLineListeners#0" expanded="false" />
+            <element signature="n#!!block;n#deleteRelation#0" expanded="false" />
+            <element signature="n#!!block;n#joinRelations#0" expanded="false" />
+            <element signature="n#!!block;n#chooseSide#0" expanded="false" />
+            <element signature="e#5497#5841#0" expanded="false" />
+            <element signature="n#!!block;n#updateLines#0" expanded="false" />
+            <element signature="n#!!block;n#loadXML#0" expanded="false" />
+            <element signature="n#!!block;n#eliminarRelaciones#0" expanded="false" />
+            <element signature="n#!!block;n#drawRelations#0" expanded="false" />
+            <element signature="n#!!block;n#loadEntity#0" expanded="false" />
+            <element signature="n#!!block;n#start#0" expanded="false" />
+            <element signature="n#!!block;n#loadSVG#0" expanded="false" />
+            <element signature="n#!!block;n#recreateRelation#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/workstation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.827586">
-          <caret line="670" column="0" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7574257">
+          <caret line="718" column="52" selection-start-line="718" selection-start-column="52" selection-end-line="718" selection-end-column="52" />
           <folding>
             <element signature="e#108#843#0" expanded="false" />
             <element signature="e#1391#1504#0" expanded="false" />
+            <element signature="n#!!block;n#saveDiagram#0" expanded="false" />
             <element signature="e#3580#3775#0" expanded="false" />
+            <element signature="n#!!block;n#changeTitle#0" expanded="false" />
             <element signature="n#!!block;n#cloneMouseup#0" expanded="false" />
             <element signature="n#!!block;n#loadThumbnails#0" expanded="false" />
             <element signature="n#!!block;n#addTextListener#0" expanded="false" />
+            <element signature="n#!!block;n#increaseAtributes#0" expanded="false" />
             <element signature="n#!!block;n#initializePage#0" expanded="false" />
             <element signature="n#!!block;n#encode_as_img_and_link#0" expanded="false" />
             <element signature="n#!!block;n#saveSVG#0" expanded="false" />
             <element signature="n#!!block;n#showSVG#0" expanded="false" />
+            <element signature="n#!!block;n#recreateEntity#0" expanded="false" />
             <element signature="n#!!block;n#createEntity#0" expanded="false" />
-            <element signature="n#!!block;n#moveEntity#0" expanded="false" />
             <element signature="n#!!block;n#adjustText#0" expanded="false" />
             <element signature="n#!!block;n#moveEntityRelations#0" expanded="false" />
-            <element signature="n#!!block;n#moveRelation#0" expanded="false" />
             <element signature="n#!!block;n#updateTitle#0" expanded="false" />
             <element signature="n#!!block;n#createRelation#0" expanded="false" />
             <element signature="n#!!block;n#deleteRelationByID#0" expanded="false" />
@@ -1219,24 +1199,6 @@
             <element signature="n#!!block;n#updateEndRelationByID#0" expanded="false" />
             <element signature="n#!!block;n#updateAtributeName#0" expanded="false" />
             <element signature="n#!!block;n#deleteAtribute#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4896074">
-          <caret line="100" column="43" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
-          <folding>
-            <element signature="e#1250#1888#0" expanded="false" />
           </folding>
         </state>
       </provider>

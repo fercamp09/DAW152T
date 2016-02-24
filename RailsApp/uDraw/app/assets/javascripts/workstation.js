@@ -192,7 +192,7 @@ function loadThumbnails(e) {
 function addTextListener (text){
     text.ondblclick = (function (event) {
         var input = $("#modificadorTexto");
-        input.val(this.attr('text'));
+        input.val(this.textContent);
         input.css("visibility", "visible");
         input.css("top", "" + event.target.getBoundingClientRect().top + "px");
         input.css("left", "" + event.target.parentNode.getBoundingClientRect().left + "px");
@@ -206,9 +206,6 @@ function increaseAtributes(entidad_id, atribute_id , text, size, count, offset){
     var texts = text.split(",");
     nodoActual = document.getElementById(atribute_id);
     rectangulo = nodoActual.parentNode.parentNode.children[0].children[0];
-    console.log(texts);
-    console.log(nodoActual);
-    console.log(rectangulo);
 
     for(var i = 0; i < texts.length; i++){
         if(texts[i] != ""){
@@ -310,9 +307,9 @@ function initializePage() {
                         }
                     }
                     rectangulo.setAttribute("height", parseInt(rectangulo.getAttribute("height")) + parseInt(20*(count-1)));
-                    position = parseInt(rectangulo.getAttribute("height"));
                     nodoActual.parentNode.removeChild(nodoActual);*/
                     input.css("visibility", "hidden");
+                    position = parseInt(rectangulo.getAttribute("height"));
                     console.log('aumento_atributos');
                 }
                 // Para el enter en el titulo de la entidad
@@ -339,7 +336,7 @@ function initializePage() {
                 if(input.val() == ""){
                     var rectHeight = parseInt(rectangulo.getAttribute("height"));
                     //rectangulo.setAttribute("height", rectHeight - 20);
-                    //position = parseInt(rectangulo.getAttribute("height"));
+                    position = parseInt(rectangulo.getAttribute("height"));
                     /*// Identificar el numero del atributo que quedo vacio
                     for(w = 0; w < rectChildren.length; w++){
                         if(nodoActual == rectChildren[w]){
@@ -670,10 +667,10 @@ function createEntity(x_in_canvas, y_in_canvas){
 }
 
 function moveEntity(entity, matrix){
-    var entidad = s.select('#'+entity);
-    entidad.attr({
-        transform: matrix
-    });
+        var entidad = s.select('#'+entity);
+        entidad.attr({
+            transform: matrix
+        });
 }
 
 function adjustText(relation,line){
@@ -716,10 +713,10 @@ function moveEntityRelations(entidad, entidadActual){
 }
 
 function moveRelation(entity){
-    var entidad = s.select('#'+entity);
-    var id = entidad.attr("id").split("-");
-    var entidadActual = entidades[id[1]];
-    moveEntityRelations(entidad, entidadActual);
+        var entidad = s.select('#'+entity);
+        var id = entidad.attr("id").split("-");
+        var entidadActual = entidades[id[1]];
+        moveEntityRelations(entidad, entidadActual);
 }
 
 function updateTitle(entity, title){

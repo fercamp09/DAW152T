@@ -17,7 +17,7 @@
     <br>
     <div class="field">
       <%= f.label :global_id , hidden: true%>
-      <%= f.text_field :global_id, {id: 'form-global-id'} %>
+      <%= f.text_field :global_id, {id: 'form-global-id', hidden: true} %>
     </div>
     <div class="field" hidden>
       <%= text_area_tag(:diagram_entities ,"Entities", size: "24x6", id: 'imagen-svg-entities')%><br>
