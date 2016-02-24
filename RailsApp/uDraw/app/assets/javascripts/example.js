@@ -1,12 +1,13 @@
 var lineVariables = [0, 0];
 var selected;
 var selectedHandler;
-var globalID = 0; //gon.globalID
+var globalID = gon.global_id;
 //var entidades = [];
 var entidades = Object.create(null);
 var selectedTitle;
 
 function incrementID(){
+    console.log(globalID);
     globalID++;
 }
 

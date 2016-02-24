@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160220153922) do
 
   create_table "diagrams", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.text     "image",      limit: 65535
+    t.string   "image",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "global_id",  limit: 4

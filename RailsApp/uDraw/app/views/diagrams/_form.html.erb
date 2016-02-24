@@ -1,4 +1,4 @@
-<%= form_for @diagram , remote:true do |f| %>
+<%= form_for @diagram , remote: true do |f| %>
     <% if @diagram.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@diagram.errors.count, "error") %> prohibited this diagram from being saved:</h2>
@@ -14,23 +14,20 @@
       <%= f.label :name %>
       <%= f.text_field :name %><br>
     </div>
-    <!--<div class="field">
-      <@%= f.label :entities %>
-      <@%= f.text_area :entities , size: "60x12", id: 'imagen-svg-entities'%><br>
+    <br>
+    <div class="field">
+      <%= f.label :global_id , hidden: true%>
+      <%= f.text_field :global_id, {id: 'form-global-id', hidden: true} %>
     </div>
-    <div class="field">
-      <@%= f.label :relations %>
-      <@%= f.text_area :relations, size: "60x12", id: 'imagen-svg-relations'%><br>
-    </div>-->
-    <div class="field">
+    <div class="field" hidden>
       <%= text_area_tag(:diagram_entities ,"Entities", size: "24x6", id: 'imagen-svg-entities')%><br>
     </div>
-    <div class="field">
+    <div class="field" hidden>
       <%= text_area_tag(:diagram_relations,"Relations", size: "24x6", id: 'imagen-svg-relations') %><br>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-
-      <%= f.submit "Guardar", id:"GuardarButton", class: "btn btn-primary", data_Dismiss: "modal"%>
+      <p id="mensaje-guardado" class="text-success">Diagrama Guardado</p>
+      <button id="close-save-button" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      <%= f.submit "Guardar", id:"guardar-Button", class: "btn btn-primary"%>
     </div>
 <% end %>
