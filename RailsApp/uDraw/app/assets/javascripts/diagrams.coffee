@@ -4,6 +4,16 @@
 window.client = new Faye.Client('/faye')
 
 jQuery ->
+
+  try
+    client.unsubscribe '/comments'
+  catch
+    console?.log "Can't unsubscribe." # print a message only if console is defined
+
+  client.subscribe '/comments', (payload) ->
+    console.log(payload)
+    $('#chat').append(payload.message) if payload.message
+
   try
     client.unsubscribe '/entity/create/'+ gon.diagram_id
   catch
@@ -101,11 +111,3 @@ jQuery ->
   client.subscribe '/atribute/increase/'+ gon.diagram_id, (message) ->
     increaseAtributes(message.entidad_id, message.atribute_id , message.texts, message.size, message.count, message.offset);
 
-try
-  client.unsubscribe '/comments'
-catch
-  console?.log "Can't unsubscribe." # print a message only if console is defined
-
-  client.subscribe '/comments', (payload) ->
-    $('#chat').append(payload.message) if payload.message
-    console.log(payload.message)
