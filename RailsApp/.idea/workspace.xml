@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39ad52b8-fc6c-4f71-91e0-c2a0d645cd8b" name="Default" comment="Chaat">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/db/migrate/20160224180414_create_comments.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/models/comment.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/test/models/comment_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/comments.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/assets/stylesheets/comments.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/test/fixtures/comments.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/controllers/comments_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/test/controllers/comments_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uDraw/app/helpers/comments_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" afterPath="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
+    <list default="true" id="39ad52b8-fc6c-4f71-91e0-c2a0d645cd8b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb" afterPath="$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" afterPath="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" />
     </list>
     <ignored path="uDraw.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +50,18 @@
       <file leaf-file-name="_chat.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2075472">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state vertical-scroll-proportion="-1.6037736">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workstation.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22168675">
+              <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -74,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diagrams.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="diagrams.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61445785">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -97,8 +100,8 @@
       <file leaf-file-name="create.js.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -161,20 +164,20 @@
         <option value="$PROJECT_DIR$/uDraw/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/application/_chat.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/show.html.erb" />
-        <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" />
         <option value="$PROJECT_DIR$/uDraw/app/models/diagram.rb" />
         <option value="$PROJECT_DIR$/uDraw/config/routes.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/models/comment.rb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/comments/new.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/diagrams_controller.rb" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/views/comments/_form.html.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/comments.coffee" />
-        <option value="$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/controllers/comments_controller.rb" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb" />
         <option value="$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee" />
+        <option value="$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb" />
+        <option value="$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css" />
       </list>
     </option>
   </component>
@@ -302,6 +305,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RailsApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uDraw" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -627,7 +656,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456342504312</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Chat">
+      <created>1456345144017</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1456345144017</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -641,7 +676,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2857143" sideWeight="0.48009187" order="7" side_tool="false" content_ui="tabs" />
@@ -654,7 +689,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31968504" sideWeight="0.52756506" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31950846" sideWeight="0.4724349" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31950846" sideWeight="0.4724349" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -720,7 +755,8 @@
     <MESSAGE value="Paginacion" />
     <MESSAGE value="Paginacion con bootstrap" />
     <MESSAGE value="Chaat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chaat" />
+    <MESSAGE value="Chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1092,14 +1128,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41647598">
-          <caret line="122" column="17" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38901603">
@@ -1149,30 +1177,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6086956">
           <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2075472">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1228,10 +1232,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/_comment.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/comments/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uDraw/app/assets/javascripts/diagrams.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61445785">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/views/diagrams/_chat.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6037736">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uDraw/app/assets/stylesheets/workstation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22168675">
+          <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
           <folding />
         </state>
       </provider>

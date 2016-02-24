@@ -118,10 +118,12 @@ body {
 
 #chat{
     position: fixed;
-    top: 50px;
+    top: 325px;
     left: 1150px;
     width: 200px;
     overflow-y: scroll;
+    height: 350px;
+    background-color: #ffffff;
 }
 
 .chat-message{
